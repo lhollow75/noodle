@@ -11,53 +11,29 @@
 			<input type="hidden" name="l" value="fr" />
 			<input type="submit" id="langue_fr" value="Francais">
 		</form>
-		<?php require_once ('connexionbdd.php'); 
+		<?php 
+		require_once ('connexionbdd.php'); 
+		include 'fonctionsbdd.php';
 		session_start();
 		if (!empty($_POST)){
 			$_SESSION['lang']=$_POST['l'];
+			
 		} else {
 			$_SESSION['lang']='fr';
 		}
-		
 		?>
+		<script type="text/javascript">
+			<?php echo 'var langue = "'.json_encode($_SESSION['lang']).'";'; ?>
+		</script>
     </head>
 
     <body>
     
 
 <?php
-	function changeLangue($langue){
-		$_SESSION['lang'] = $langue;
-	}
 	
-	$req = $mysql->prepare("SELECT date, heure FROM administration WHERE ville='Paris'");
-	$req->execute();
-	if($req->rowCount()>=1) {
-		while ($donnees = $req->fetch()){
-			$date=$donnees['date'];
-			$heure=$donnees['heure'];
-			$date3=$date.', '.$heure;
-		}
-	}
-	$req2 = $mysql->prepare("SELECT description, fr, en FROM contenu");
-	$req2->execute();
-	if($req2->rowCount()>=1) {
-		// echo 'here';
-		while ($donnees = $req2->fetch()){
-			// echo 'donnees:';
-			// var_dump($donnees);
-			switch ($donnees['description']){
-				case 'bonjour':
-					$affiche['bonjour']=$donnees;
-					break;
-				case 'fin_compte':
-					$affiche['fin_compte']=$donnees;
-					break;
-			}
-			// echo "après";
-		}
-	}
-	// var_dump($affiche);
+	$date=recupEvent($mysql);
+	$affiche=recupTexte($mysql, $_SESSION['lang']);
 	if ($_SESSION['lang']=="fr") echo $affiche['bonjour']['fr']; else echo $affiche['bonjour']['en'];
 	?>
 
@@ -66,18 +42,23 @@
  <script type="text/javascript">
  var Affiche=document.getElementById("Compte");
  function Rebour() {
- var date1 = new Date();
- var date2 = new Date ('<?php echo $date3; ?>');
- var sec = (date2 - date1) / 1000;
- var n = 24 * 3600;
- if (sec > 0) {
- j = Math.floor (sec / n);
- h = Math.floor ((sec - (j * n)) / 3600);
- mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
- sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
- Affiche.innerHTML = j +" j "+ h +" h "+ mn +" min "+ sec + " s";
- }
- tRebour=setTimeout ("Rebour();", 1000);
+	 var date1 = new Date();
+	 var date2 = new Date ('<?php echo $date; ?>');
+	 var sec = (date2 - date1) / 1000;
+	 var n = 24 * 3600;
+	 var langue = '<?php echo $_SESSION['lang']; ?>';
+	 if (sec > 0) {
+		 j = Math.floor (sec / n);
+		 h = Math.floor ((sec - (j * n)) / 3600);
+		 mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
+		 sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
+		if (langue == 'fr') {
+			Affiche.innerHTML = j +" j "+ h +" h "+ mn +" min "+ sec + " s";
+		} else {
+			Affiche.innerHTML = j +" d "+ h +" h "+ mn +" min "+ sec + " s";
+		} 
+	 }
+	 tRebour=setTimeout ("Rebour();", 1000);
  }
  Rebour();
  </script>
@@ -105,6 +86,13 @@
 </form>
  <?php 
  if ($_SESSION['lang']=="fr") echo utf8_encode($affiche['fin_compte']['fr']); else echo utf8_encode($affiche['fin_compte']['en']);
+echo('<br /><br />articles :<br />');
+$article = recupArticles($mysql,$_SESSION['lang']);
+foreach ($article as $key => $value){
+	echo $value['titre'];
+	echo "<br /><br />";
+	echo $value['article'];
+}
  ?>
     </body>
 </html>
