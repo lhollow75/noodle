@@ -39,15 +39,26 @@
 			$date3=$date.', '.$heure;
 		}
 	}
-	$req2 = $mysql->prepare("SELECT fr, en FROM contenu");
+	$req2 = $mysql->prepare("SELECT description, fr, en FROM contenu");
 	$req2->execute();
 	if($req2->rowCount()>=1) {
+		// echo 'here';
 		while ($donnees = $req2->fetch()){
-			$affiche[]=$donnees;
+			// echo 'donnees:';
+			// var_dump($donnees);
+			switch ($donnees['description']){
+				case 'bonjour':
+					$affiche['bonjour']=$donnees;
+					break;
+				case 'fin_compte':
+					$affiche['fin_compte']=$donnees;
+					break;
+			}
+			// echo "après";
 		}
 	}
-	var_dump($affiche);
-	if ($_SESSION['lang']=="fr") echo $affiche[0]['fr']; else echo $affiche[0]['en'];
+	// var_dump($affiche);
+	if ($_SESSION['lang']=="fr") echo $affiche['bonjour']['fr']; else echo $affiche['bonjour']['en'];
 	?>
 
 	</br></br>
@@ -93,7 +104,7 @@
   </p>
 </form>
  <?php 
- if ($_SESSION['lang']=="fr") echo utf8_encode($affiche[1]['fr']); else echo utf8_encode($affiche[1]['en']);
+ if ($_SESSION['lang']=="fr") echo utf8_encode($affiche['fin_compte']['fr']); else echo utf8_encode($affiche['fin_compte']['en']);
  ?>
     </body>
 </html>
