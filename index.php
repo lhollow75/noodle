@@ -166,17 +166,33 @@
 	 var langue = '<?php echo $langue; ?>';
 	 console.log(langue);
 	 if (sec > 0) {
-		 j = Math.floor (sec / n);
-		 h = Math.floor ((sec - (j * n)) / 3600);
-		 mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
-		 sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
+		 j = reglageTemps(Math.floor (sec / n));
+		 h = reglageTemps(Math.floor ((sec - (j * n)) / 3600));
+		 mn = reglageTemps(Math.floor ((sec - ((j * n + h * 3600))) / 60));
+		 sec = reglageTemps(Math.floor (sec - ((j * n + h * 3600 + mn * 60))));
 		if (langue == 'fr') {
-			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>jours</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>heures</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minutes</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>secondes</div></div>";
+			jours= 'jours';
+			heures='heures';
+			minutes='minutes';
+			secondes='secondes';
 		} else if (langue == 'en'){
-			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>days</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>hours</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minutes</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>seconds</div></div>";
+			jours= 'days';
+			heures='hours';
+			minutes='minutes';
+			secondes='seconds';
 		} else {
-			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>tage</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>studen</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minuten</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>zweite</div></div>";
+			jours= 'tage';
+			heures='studen';
+			minutes='minuten';
+			secondes='zweite';
 		} 
+		Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j + "</div><div class='letters'>" + jours + "</div></div>" + "<div class='count'><div class='numbers'>" + h + "</div><div class='letters'>" + heures + "</div></div>" + "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>" + minutes + "</div></div>" + "<div class='count'><div class='numbers'>" + sec + "</div><div class='letters'>" + secondes + "</div></div>";
+	 }
+	 function reglageTemps(temps){
+		 if (temps < 10){
+			 temps = '0'+temps;
+		 }
+		 return temps;
 	 }
 	 tRebour=setTimeout ("Rebour();", 1000);
  }
@@ -206,9 +222,9 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 		<div id="store" class="recent-products-home-wrapper ">
 			<div class="container section">
 				<div class="section-title pdb-30">
-					<h2>Merch</h2>
+					<h2><?php echo $affiche['boutique'][$langue]; ?></h2>
 					<div class="sep"></div>
-					<p>Get your gear directly from the website !</p>
+					<p><?php echo $affiche['boutique_d'][$langue]; ?></p>
 				</div>
 				<div class="row recent-products">
 					<div class="col-md-3 col-sm-6">
@@ -217,7 +233,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/1.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -234,7 +250,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/2.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -252,7 +268,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/3.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -270,7 +286,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/4.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -288,7 +304,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/5.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -306,7 +322,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 								<img class="img-responsive" src="images/products/6.png" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
