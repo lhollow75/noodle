@@ -1,4 +1,5 @@
 <?php
+include('mail.php');
 if (!empty($_POST)){
 	//var_dump($_POST['your-email']);
 	$mail=$_POST['your-email']; // Déclaration de l'adresse de destination.
@@ -14,7 +15,6 @@ else
 }
 //=====Déclaration des messages au format texte et au format HTML.
 $message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-$message_html = "<html><head></head><body><b>Salut à tous</b>, voici un e-mail envoyé par un <i>script PHP</i>.</body></html>";
 //==========
  
 //=====Création de la boundary
@@ -22,7 +22,7 @@ $boundary = "-----=".md5(rand());
 //==========
  
 //=====Définition du sujet.
-$sujet = "Hey mon ami !";
+$sujet = "L'aventure de Gorillaz commence !";
 //=========
  
 //=====Création du header de l'e-mail.
@@ -52,4 +52,5 @@ $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 //=====Envoi de l'e-mail.
 mail($mail,$sujet,$message,$header);
 //==========
+header('Location: index.php'); 
 ?>

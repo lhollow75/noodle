@@ -18,17 +18,7 @@ function recupTexte($mysql, $langue) {
 	$req2->execute();
 	if($req2->rowCount()>=1) {
 		while ($donnees = $req2->fetch()){
-			switch ($donnees['description']){
-				case 'bonjour':
-					$affiche['bonjour']=$donnees;
-					break;
-				case 'fin_compte':
-					$affiche['fin_compte']=$donnees;
-					break;
-				case 'boutique':
-					$affiche['boutique']=$donnees;
-					break;
-			}
+			$affiche[$donnees['description']]=$donnees;
 		}
 	}
 	return $affiche;

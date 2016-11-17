@@ -24,16 +24,33 @@
 
     <meta charset="utf-8" />
     <title>Dare Gorillaz</title>
-  	</head>
+	<?php 
+	require_once ('connexionbdd.php'); 
+	include 'fonctionsbdd.php';
+	
+	session_start();
+	if (!empty($_POST)){
+		$_SESSION['lang']=$_POST['l'];
+	} else {
+		$_SESSION['lang']='fr';
+	}
+	if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+		$langue='en';
+	} else if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fr'){
+		$langue='fr';
+	} else {
+		$langue='de';
+	}
+	$date=recupEvent($mysql);
+	$affiche=recupTexte($mysql, $langue);
+	?>
+  
+</head>
 
-    <body>
+<body>
 
     <!-- Header -->
 	<header id="site-header">
-		<form action="#" id="search-header" name="search-header">
-			<input type="search" name="search" placeholder="Type and Hit Enter..">
-			<button>Search</button>
-		</form>
 		<div class="container nav-wrapper">
 			<!-- Main Mneu -->
 
@@ -41,7 +58,7 @@
 			<nav id="site-navigation" class="site-navigation">
 				<ul id="main-menu">
 					<li class="active menu-left">
-						<a href="#">Store</a>
+						<a href="#"><?php echo $affiche['boutique'][$langue]; ?></a>
 					</li>
 					<li class="menu-left">
 						<a href="#"><i class="fa fa-shopping-cart"></i></a>
@@ -68,37 +85,43 @@
 						<?php
 
 
-		require_once ('connexionbdd.php'); 
-		include 'fonctionsbdd.php';
-		session_start();
-		if (!empty($_POST)){
-			$_SESSION['lang']=$_POST['l'];
-		} else {
-			$_SESSION['lang']='fr';
-		}
+		
 		if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
-			$langue='en';
-
 			?>
 			<form action="" method="post" id="language">	
 				<input type="hidden" name="l" value="fr" />
 				<input type="submit" id="langue_fr" value="Francais">
 			</form>
+			<form action="" method="post" id="language">	
+				<input type="hidden" name="l" value="de" />
+				<input type="submit" id="langue_de" value="Deutsch">
+			</form>
 			<?php
-		} else {
-			$langue='fr';
+		} else if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fr'){
 			?>
 			<form action="" method="post" id="language">	
 				<input type="hidden" name="l" value="en" />
 				<input type="submit" id="langue_en" value="English">
 			</form>
+			<form action="" method="post" id="language">	
+				<input type="hidden" name="l" value="de" />
+				<input type="submit" id="langue_de" value="Deutsch">
+			</form>
 			
 		<?php 
+		} else {
+			?>
+			<form action="" method="post" id="language">	
+				<input type="hidden" name="l" value="fr" />
+				<input type="submit" id="langue_fr" value="Francais">
+			</form>
+			<form action="" method="post" id="language">	
+				<input type="hidden" name="l" value="en" />
+				<input type="submit" id="langue_en" value="English">
+			</form>
+			<?php
 		}
 		?>
-		<script type="text/javascript">
-			<?php echo 'var langue = "'.json_encode($_SESSION['lang']).'";'; ?>
-		</script>
 					</li>
 				</ul>
 			</nav>
@@ -115,13 +138,6 @@
 	</div>
     <div class="right-content">
 
-<?php
-	
-	$date=recupEvent($mysql);
-	$affiche=recupTexte($mysql, $langue);
-	
-	?>
-
 
 	</br></br>
  <label id="Compte"></label>
@@ -133,15 +149,18 @@
 	 var sec = (date2 - date1) / 1000;
 	 var n = 24 * 3600;
 	 var langue = '<?php echo $langue; ?>';
+	 console.log(langue);
 	 if (sec > 0) {
 		 j = Math.floor (sec / n);
 		 h = Math.floor ((sec - (j * n)) / 3600);
 		 mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
 		 sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
 		if (langue == 'fr') {
+			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>jours</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>heures</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minutes</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>secondes</div></div>";
+		} else if (langue == 'en'){
 			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>days</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>hours</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minutes</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>seconds</div></div>";
 		} else {
-			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>days</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>hours</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minutes</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>seconds</div></div>";
+			Affiche.innerHTML = "<div class='count'><div class='numbers'>" + j +"</div><div class='letters'>tage</div></div>"+ "<div class='count'><div class='numbers'>" + h +"</div><div class='letters'>studen</div></div>"+ "<div class='count'><div class='numbers'>" + mn + "</div><div class='letters'>minuten</div></div>" + "<div class='count'><div class='numbers'>" +sec + "</div><div class='letters'>zweite</div></div>";
 		} 
 	 }
 	 tRebour=setTimeout ("Rebour();", 1000);
@@ -159,31 +178,12 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 
 
  <form action="envoimail.php" id="contact-form" method="post">
-	<label for="your-name">First-name</label>
-	<input type="text" name="your-name" id="your-name" minlength="3" placeholder="Your name" required>
+	<label for="your-name"><?php echo $affiche['nom'][$langue]; ?></label>
+	<input type="text" name="your-name" id="your-name" minlength="3" placeholder="<?php echo $affiche['ph_nom'][$langue]; ?>" required>
 	<label for="email">Email</label>
-	<input type="email" name="your-email" id="email" placeholder="Your email address" required>
-	<button type="submit" class="btn_sub">Send</button>
+	<input type="email" name="your-email" id="email" placeholder="<?php echo $affiche['ph_nom'][$langue]; ?>" required>
+	<button type="submit" class="btn_sub"><?php echo $affiche['envoi'][$langue]; ?></button>
 </form>
-
-
-<!--
-<?php /*
-echo('<br /><br />articles :<br />');
-$article = recupArticles($mysql,$langue);
-foreach ($article as $key => $value){
-	?>
-	<a href="<?php echo $value['lien']; ?>">
-		<img src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>" />
-	</a>
-<?php
-	echo "<br />";
-	echo $value['titre'];
-	echo "<br /><br />";
-	echo $value['article'];
-} */
- ?>
--->
 
  </div>
 </div>

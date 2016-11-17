@@ -1,6 +1,6 @@
 <?php
 $message_html = "<!doctype html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">
 	<head>
 		<!-- NAME: 1 COLUMN -->
 		<!--[if gte mso 15]>
@@ -11,12 +11,12 @@ $message_html = "<!doctype html>
 			</o:OfficeDocumentSettings>
 		</xml>
 		<![endif]-->
-		<meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset=\"UTF-8\">
+        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
 		<title>*|MC:SUBJECT|*</title>
         
-    <style type="text/css">
+    <style type=\"text/css\">
 		p{
 			margin:10px 0;
 			padding:0;
@@ -541,35 +541,35 @@ $message_html = "<!doctype html>
 }</style></head>
     <body>
         <center>
-            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" height=\"100%\" width=\"100%\" id=\"bodyTable\">
                 <tr>
-                    <td align="center" valign="top" id="bodyCell">
+                    <td align=\"center\" valign=\"top\" id=\"bodyCell\">
                         <!-- BEGIN TEMPLATE // -->
 						<!--[if gte mso 9]>
-						<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
+						<table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"600\" style=\"width:600px;\">
 						<tr>
-						<td align="center" valign="top" width="600" style="width:600px;">
+						<td align=\"center\" valign=\"top\" width=\"600\" style=\"width:600px;\">
 						<![endif]-->
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
+                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"templateContainer\">
                             <tr>
-                                <td valign="top" id="templatePreheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
+                                <td valign=\"top\" id=\"templatePreheader\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnTextBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnTextBlockOuter\">
         <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+            <td valign=\"top\" class=\"mcnTextBlockInner\" style=\"padding-top:9px;\">
               	<!--[if mso]>
-				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" style=\"width:100%;\">
 				<tr>
 				<![endif]-->
 			    
 				<!--[if mso]>
-				<td valign="top" width="390" style="width:390px;">
+				<td valign=\"top\" width=\"390\" style=\"width:390px;\">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:390px;" width="100%" class="mcnTextContentContainer">
+                <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:390px;\" width=\"100%\" class=\"mcnTextContentContainer\">
                     <tbody><tr>
                         
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;">
+                        <td valign=\"top\" class=\"mcnTextContent\" style=\"padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;\">
                         
-                            Dare Gorillaz&nbsp;
+                            &nbsp;
                         </td>
                     </tr>
                 </tbody></table>
@@ -578,14 +578,14 @@ $message_html = "<!doctype html>
 				<![endif]-->
                 
 				<!--[if mso]>
-				<td valign="top" width="210" style="width:210px;">
+				<td valign=\"top\" width=\"210\" style=\"width:210px;\">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:210px;" width="100%" class="mcnTextContentContainer">
+                <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:210px;\" width=\"100%\" class=\"mcnTextContentContainer\">
                     <tbody><tr>
                         
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;">
+                        <td valign=\"top\" class=\"mcnTextContent\" style=\"padding-top:0; padding-left:18px; padding-bottom:9px; padding-right:18px;\">
                         
-                            <a href="*|ARCHIVE|*" target="_blank">View this email in your browser</a>
+                            <a href=\"*|ARCHIVE|*\" target=\"_blank\">View this email in your browser</a>
                         </td>
                     </tr>
                 </tbody></table>
@@ -603,16 +603,16 @@ $message_html = "<!doctype html>
 </table></td>
                             </tr>
                             <tr>
-                                <td valign="top" id="templateHeader"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width:100%;">
-    <tbody class="mcnImageBlockOuter">
+                                <td valign=\"top\" id=\"templateHeader\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnImageBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnImageBlockOuter\">
             <tr>
-                <td valign="top" style="padding:9px" class="mcnImageBlockInner">
-                    <table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="mcnImageContentContainer" style="min-width:100%;">
+                <td valign=\"top\" style=\"padding:9px\" class=\"mcnImageBlockInner\">
+                    <table align=\"left\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mcnImageContentContainer\" style=\"min-width:100%;\">
                         <tbody><tr>
-                            <td class="mcnImageContent" valign="top" style="padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;">
+                            <td class=\"mcnImageContent\" valign=\"top\" style=\"padding-right: 9px; padding-left: 9px; padding-top: 0; padding-bottom: 0; text-align:center;\">
                                 
                                     
-                                        <img align="center" alt="" src="https://gallery.mailchimp.com/6338c88f7afde9e95cad5826d/images/6a4618be-9087-4498-b0ba-512eac040bbe.png" width="564" style="max-width:1024px; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="mcnImage">
+                                        <img align=\"center\" alt=\"\" src=\"https://gallery.mailchimp.com/6338c88f7afde9e95cad5826d/images/6a4618be-9087-4498-b0ba-512eac040bbe.png\" width=\"564\" style=\"max-width:1024px; padding-bottom: 0; display: inline !important; vertical-align: bottom;\" class=\"mcnImage\">
                                     
                                 
                             </td>
@@ -624,28 +624,28 @@ $message_html = "<!doctype html>
 </table></td>
                             </tr>
                             <tr>
-                                <td valign="top" id="templateBody"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
+                                <td valign=\"top\" id=\"templateBody\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnTextBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnTextBlockOuter\">
         <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+            <td valign=\"top\" class=\"mcnTextBlockInner\" style=\"padding-top:9px;\">
               	<!--[if mso]>
-				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" style=\"width:100%;\">
 				<tr>
 				<![endif]-->
 			    
 				<!--[if mso]>
-				<td valign="top" width="600" style="width:600px;">
+				<td valign=\"top\" width=\"600\" style=\"width:600px;\">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
+                <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:100%; min-width:100%;\" width=\"100%\" class=\"mcnTextContentContainer\">
                     <tbody><tr>
                         
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
+                        <td valign=\"top\" class=\"mcnTextContent\" style=\"padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;\">
                         
-                            <h1 style="text-align: center;"><span style="font-family:roboto,helvetica neue,helvetica,arial,sans-serif">Votre inscription à bien été prise en compte</span></h1>
+                            <h1 style=\"text-align: center;\"><span style=\"font-family:roboto,helvetica neue,helvetica,arial,sans-serif\">Votre inscription a bien été prise en compte</span></h1>
 
-<p style="text-align: center;">Vous allez bientôt récevoir des informations par mail.</p>
+<p style=\"text-align: center;\">Vous allez bientôt recevoir des informations par mail.</p>
 
-<p style="text-align: center;">En attendant suivez nous sur les réséaux sociaux.</p>
+<p style=\"text-align: center;\">En attendant suivez-nous sur les reseaux sociaux.</p>
 
                         </td>
                     </tr>
@@ -664,40 +664,40 @@ $message_html = "<!doctype html>
 </table></td>
                             </tr>
                             <tr>
-                                <td valign="top" id="templateFooter"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowBlock" style="min-width:100%;">
-    <tbody class="mcnFollowBlockOuter">
+                                <td valign=\"top\" id=\"templateFooter\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnFollowBlockOuter\">
         <tr>
-            <td align="center" valign="top" style="padding:9px" class="mcnFollowBlockInner">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentContainer" style="min-width:100%;">
+            <td align=\"center\" valign=\"top\" style=\"padding:9px\" class=\"mcnFollowBlockInner\">
+                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentContainer\" style=\"min-width:100%;\">
     <tbody><tr>
-        <td align="center" style="padding-left:9px;padding-right:9px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width:100%;" class="mcnFollowContent">
+        <td align=\"center\" style=\"padding-left:9px;padding-right:9px;\">
+            <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"min-width:100%;\" class=\"mcnFollowContent\">
                 <tbody><tr>
-                    <td align="center" valign="top" style="padding-top:9px; padding-right:9px; padding-left:9px;">
-                        <table align="center" border="0" cellpadding="0" cellspacing="0">
+                    <td align=\"center\" valign=\"top\" style=\"padding-top:9px; padding-right:9px; padding-left:9px;\">
+                        <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\">
                             <tbody><tr>
-                                <td align="center" valign="top">
+                                <td align=\"center\" valign=\"top\">
                                     <!--[if mso]>
-                                    <table align="center" border="0" cellspacing="0" cellpadding="0">
+                                    <table align=\"center\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                                     <tr>
                                     <![endif]-->
                                     
                                         <!--[if mso]>
-                                        <td align="center" valign="top">
+                                        <td align=\"center\" valign=\"top\">
                                         <![endif]-->
                                         
                                         
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                            <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"display:inline;\">
                                                 <tbody><tr>
-                                                    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                    <td valign=\"top\" style=\"padding-right:10px; padding-bottom:9px;\" class=\"mcnFollowContentItemContainer\">
+                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentItem\">
                                                             <tbody><tr>
-                                                                <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                <td align=\"left\" valign=\"middle\" style=\"padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;\">
+                                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"\">
                                                                         <tbody><tr>
                                                                             
-                                                                                <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-                                                                                    <a href="http://www.facebook.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-facebook-48.png" style="display:block;" height="24" width="24" class=""></a>
+                                                                                <td align=\"center\" valign=\"middle\" width=\"24\" class=\"mcnFollowIconContent\">
+                                                                                    <a href=\"http://www.facebook.com\" target=\"_blank\"><img src=\"https://cdn-images.mailchimp.com/icons/social-block-v2/color-facebook-48.png\" style=\"display:block;\" height=\"24\" width=\"24\" class=\"\"></a>
                                                                                 </td>
                                                                             
                                                                             
@@ -715,21 +715,21 @@ $message_html = "<!doctype html>
                                         <![endif]-->
                                     
                                         <!--[if mso]>
-                                        <td align="center" valign="top">
+                                        <td align=\"center\" valign=\"top\">
                                         <![endif]-->
                                         
                                         
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                            <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"display:inline;\">
                                                 <tbody><tr>
-                                                    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                    <td valign=\"top\" style=\"padding-right:10px; padding-bottom:9px;\" class=\"mcnFollowContentItemContainer\">
+                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentItem\">
                                                             <tbody><tr>
-                                                                <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                <td align=\"left\" valign=\"middle\" style=\"padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;\">
+                                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"\">
                                                                         <tbody><tr>
                                                                             
-                                                                                <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-                                                                                    <a href="http://www.twitter.com/" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-twitter-48.png" style="display:block;" height="24" width="24" class=""></a>
+                                                                                <td align=\"center\" valign=\"middle\" width=\"24\" class=\"mcnFollowIconContent\">
+                                                                                    <a href=\"http://www.twitter.com/\" target=\"_blank\"><img src=\"https://cdn-images.mailchimp.com/icons/social-block-v2/color-twitter-48.png\" style=\"display:block;\" height=\"24\" width=\"24\" class=\"\"></a>
                                                                                 </td>
                                                                             
                                                                             
@@ -747,21 +747,21 @@ $message_html = "<!doctype html>
                                         <![endif]-->
                                     
                                         <!--[if mso]>
-                                        <td align="center" valign="top">
+                                        <td align=\"center\" valign=\"top\">
                                         <![endif]-->
                                         
                                         
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                            <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"display:inline;\">
                                                 <tbody><tr>
-                                                    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                    <td valign=\"top\" style=\"padding-right:10px; padding-bottom:9px;\" class=\"mcnFollowContentItemContainer\">
+                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentItem\">
                                                             <tbody><tr>
-                                                                <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                <td align=\"left\" valign=\"middle\" style=\"padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;\">
+                                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"\">
                                                                         <tbody><tr>
                                                                             
-                                                                                <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-                                                                                    <a href="http://instagram.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display:block;" height="24" width="24" class=""></a>
+                                                                                <td align=\"center\" valign=\"middle\" width=\"24\" class=\"mcnFollowIconContent\">
+                                                                                    <a href=\"http://instagram.com\" target=\"_blank\"><img src=\"https://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png\" style=\"display:block;\" height=\"24\" width=\"24\" class=\"\"></a>
                                                                                 </td>
                                                                             
                                                                             
@@ -779,21 +779,21 @@ $message_html = "<!doctype html>
                                         <![endif]-->
                                     
                                         <!--[if mso]>
-                                        <td align="center" valign="top">
+                                        <td align=\"center\" valign=\"top\">
                                         <![endif]-->
                                         
                                         
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                            <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"display:inline;\">
                                                 <tbody><tr>
-                                                    <td valign="top" style="padding-right:10px; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                    <td valign=\"top\" style=\"padding-right:10px; padding-bottom:9px;\" class=\"mcnFollowContentItemContainer\">
+                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentItem\">
                                                             <tbody><tr>
-                                                                <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                <td align=\"left\" valign=\"middle\" style=\"padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;\">
+                                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"\">
                                                                         <tbody><tr>
                                                                             
-                                                                                <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-                                                                                    <a href="http://www.youtube.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-youtube-48.png" style="display:block;" height="24" width="24" class=""></a>
+                                                                                <td align=\"center\" valign=\"middle\" width=\"24\" class=\"mcnFollowIconContent\">
+                                                                                    <a href=\"http://www.youtube.com\" target=\"_blank\"><img src=\"https://cdn-images.mailchimp.com/icons/social-block-v2/color-youtube-48.png\" style=\"display:block;\" height=\"24\" width=\"24\" class=\"\"></a>
                                                                                 </td>
                                                                             
                                                                             
@@ -811,21 +811,21 @@ $message_html = "<!doctype html>
                                         <![endif]-->
                                     
                                         <!--[if mso]>
-                                        <td align="center" valign="top">
+                                        <td align=\"center\" valign=\"top\">
                                         <![endif]-->
                                         
                                         
-                                            <table align="left" border="0" cellpadding="0" cellspacing="0" style="display:inline;">
+                                            <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"display:inline;\">
                                                 <tbody><tr>
-                                                    <td valign="top" style="padding-right:0; padding-bottom:9px;" class="mcnFollowContentItemContainer">
-                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnFollowContentItem">
+                                                    <td valign=\"top\" style=\"padding-right:0; padding-bottom:9px;\" class=\"mcnFollowContentItemContainer\">
+                                                        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnFollowContentItem\">
                                                             <tbody><tr>
-                                                                <td align="left" valign="middle" style="padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;">
-                                                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="">
+                                                                <td align=\"left\" valign=\"middle\" style=\"padding-top:5px; padding-right:10px; padding-bottom:5px; padding-left:9px;\">
+                                                                    <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"\">
                                                                         <tbody><tr>
                                                                             
-                                                                                <td align="center" valign="middle" width="24" class="mcnFollowIconContent">
-                                                                                    <a href="http://www.tumblr.com" target="_blank"><img src="https://cdn-images.mailchimp.com/icons/social-block-v2/color-tumblr-48.png" style="display:block;" height="24" width="24" class=""></a>
+                                                                                <td align=\"center\" valign=\"middle\" width=\"24\" class=\"mcnFollowIconContent\">
+                                                                                    <a href=\"http://www.tumblr.com\" target=\"_blank\"><img src=\"https://cdn-images.mailchimp.com/icons/social-block-v2/color-tumblr-48.png\" style=\"display:block;\" height=\"24\" width=\"24\" class=\"\"></a>
                                                                                 </td>
                                                                             
                                                                             
@@ -859,11 +859,11 @@ $message_html = "<!doctype html>
             </td>
         </tr>
     </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width:100%;">
-    <tbody class="mcnDividerBlockOuter">
+</table><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnDividerBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnDividerBlockOuter\">
         <tr>
-            <td class="mcnDividerBlockInner" style="min-width: 100%; padding: 10px 18px 25px;">
-                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top: 2px solid #EEEEEE;">
+            <td class=\"mcnDividerBlockInner\" style=\"min-width: 100%; padding: 10px 18px 25px;\">
+                <table class=\"mcnDividerContent\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"min-width: 100%;border-top: 2px solid #EEEEEE;\">
                     <tbody><tr>
                         <td>
                             <span></span>
@@ -871,41 +871,26 @@ $message_html = "<!doctype html>
                     </tr>
                 </tbody></table>
 <!--            
-                <td class="mcnDividerBlockInner" style="padding: 18px;">
-                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+                <td class=\"mcnDividerBlockInner\" style=\"padding: 18px;\">
+                <hr class=\"mcnDividerContent\" style=\"border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;\" />
 -->
             </td>
         </tr>
     </tbody>
-</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width:100%;">
-    <tbody class="mcnTextBlockOuter">
+</table><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" class=\"mcnTextBlock\" style=\"min-width:100%;\">
+    <tbody class=\"mcnTextBlockOuter\">
         <tr>
-            <td valign="top" class="mcnTextBlockInner" style="padding-top:9px;">
+            <td valign=\"top\" class=\"mcnTextBlockInner\" style=\"padding-top:9px;\">
               	<!--[if mso]>
-				<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+				<table align=\"left\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" style=\"width:100%;\">
 				<tr>
 				<![endif]-->
 			    
 				<!--[if mso]>
-				<td valign="top" width="600" style="width:600px;">
+				<td valign=\"top\" width=\"600\" style=\"width:600px;\">
 				<![endif]-->
-                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width:100%; min-width:100%;" width="100%" class="mcnTextContentContainer">
-                    <tbody><tr>
-                        
-                        <td valign="top" class="mcnTextContent" style="padding-top:0; padding-right:18px; padding-bottom:9px; padding-left:18px;">
-                        
-                            <em>Copyright © *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em><br>
-*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*<br>
-<br>
-<strong>Our mailing address is:</strong><br>
-*|HTML:LIST_ADDRESS_HTML|* *|END:IF|*<br>
-<br>
-Want to change how you receive these emails?<br>
-You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|UNSUB|*">unsubscribe from this list</a><br>
-<br>
-*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
-                        </td>
-                    </tr>
+                <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"max-width:100%; min-width:100%;\" width=\"100%\" class=\"mcnTextContentContainer\">
+                    <tbody>
                 </tbody></table>
 				<!--[if mso]>
 				</td>
@@ -932,4 +917,4 @@ You can <a href="*|UPDATE_PROFILE|*">update your preferences</a> or <a href="*|U
             </table>
         </center>
     </body>
-</html>"
+</html>";
