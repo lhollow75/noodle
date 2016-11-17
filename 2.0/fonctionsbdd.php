@@ -18,24 +18,14 @@ function recupTexte($mysql, $langue) {
 	$req2->execute();
 	if($req2->rowCount()>=1) {
 		while ($donnees = $req2->fetch()){
-			switch ($donnees['description']){
-				case 'bonjour':
-					$affiche['bonjour']=$donnees;
-					break;
-				case 'fin_compte':
-					$affiche['fin_compte']=$donnees;
-					break;
-				case 'boutique':
-					$affiche['boutique']=$donnees;
-					break;
-			}
+			$affiche[$donnees['description']]=$donnees;
 		}
 	}
 	return $affiche;
 }
 
 function recupArticles($mysql, $langue) {
-	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue.", lien, image FROM articles order by date_insert desc");
+	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue.", lien, image, date_insert FROM articles order by date_insert desc");
 	$req3->execute();
 	if($req3->rowCount()>=1){
 		$i=0;
@@ -52,6 +42,7 @@ function recupArticles($mysql, $langue) {
 			}
 			$reponse[$i]['lien']=$donnees['lien'];
 			$reponse[$i]['img']=$donnees['image'];
+			$reponse[$i]['date_insert']=$donnees['date_insert'];
 			$i++;
 		}
 	}

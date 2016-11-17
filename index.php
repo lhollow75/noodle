@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MusicBase HTML</title>
+
+	<title>Dare Gorillaz</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
 	<!-- Google Fonts -->
@@ -19,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 
     <meta charset="utf-8" />
     <title>Dare Gorillaz</title>
@@ -64,6 +66,8 @@
 					</li>
 					<li class="res_s last">
 						<?php
+
+
 		require_once ('connexionbdd.php'); 
 		include 'fonctionsbdd.php';
 		session_start();
@@ -74,6 +78,7 @@
 		}
 		if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
 			$langue='en';
+
 			?>
 			<form action="" method="post" id="language">	
 				<input type="hidden" name="l" value="fr" />
@@ -116,6 +121,7 @@
 	$affiche=recupTexte($mysql, $langue);
 	
 	?>
+
 
 	</br></br>
  <label id="Compte"></label>
@@ -300,8 +306,7 @@ foreach ($article as $key => $value){
 				</div>
 			</div>
 		</div>
-		
- <!-- Go to top button -->
+	
 	<div id="back-to-top" class="fa fa-arrow-circle-up"></div>
 	<div id="pause-player" class="fa fa-play-circle"></div>
 
@@ -331,5 +336,5 @@ foreach ($article as $key => $value){
 	<script type="text/javascript" src="js/revolution.extension.actions.min.js"></script>
 	<!-- END RS5.0 Core JS Files -->
 	<script type="text/javascript" src="js/custom_js.js"></script>
-    </body>
+</body>
 </html>
