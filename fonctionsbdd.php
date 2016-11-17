@@ -32,7 +32,7 @@ function recupTexte($mysql, $langue) {
 }
 
 function recupArticles($mysql, $langue) {
-	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue." FROM articles order by date_insert desc");
+	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue.", lien, image FROM articles order by date_insert desc");
 	$req3->execute();
 	if($req3->rowCount()>=1){
 		$i=0;
@@ -47,6 +47,8 @@ function recupArticles($mysql, $langue) {
 					$reponse[$i]['article']=utf8_encode($donnees['en']);
 					break;
 			}
+			$reponse[$i]['lien']=$donnees['lien'];
+			$reponse[$i]['img']=$donnees['image'];
 			$i++;
 		}
 	}

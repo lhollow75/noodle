@@ -3,23 +3,32 @@
     <head>
         <meta charset="utf-8" />
         <title>Dare Gorillaz</title>
-		<form action="" method="post">	
-			<input type="hidden" name="l" value="en" />
-			<input type="submit" id="langue_en" value="English">
-		</form>
-		<form action="" method="post">	
-			<input type="hidden" name="l" value="fr" />
-			<input type="submit" id="langue_fr" value="Francais">
-		</form>
-		<?php 
+		<?php
 		require_once ('connexionbdd.php'); 
 		include 'fonctionsbdd.php';
 		session_start();
 		if (!empty($_POST)){
 			$_SESSION['lang']=$_POST['l'];
-			
 		} else {
 			$_SESSION['lang']='fr';
+		}
+		if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+			$langue='en';
+			?>
+			<form action="" method="post">	
+				<input type="hidden" name="l" value="fr" />
+				<input type="submit" id="langue_fr" value="Francais">
+			</form>
+			<?php
+		} else {
+			$langue='fr';
+			?>
+			<form action="" method="post">	
+				<input type="hidden" name="l" value="en" />
+				<input type="submit" id="langue_en" value="English">
+			</form>
+			
+		<?php 
 		}
 		?>
 		<script type="text/javascript">
@@ -33,8 +42,8 @@
 <?php
 	
 	$date=recupEvent($mysql);
-	$affiche=recupTexte($mysql, $_SESSION['lang']);
-	if ($_SESSION['lang']=="fr") echo $affiche['bonjour']['fr']; else echo $affiche['bonjour']['en'];
+	$affiche=recupTexte($mysql, $langue);
+	echo $affiche['bonjour'][$langue];
 	?>
 
 	</br></br>
@@ -46,7 +55,7 @@
 	 var date2 = new Date ('<?php echo $date; ?>');
 	 var sec = (date2 - date1) / 1000;
 	 var n = 24 * 3600;
-	 var langue = '<?php echo $_SESSION['lang']; ?>';
+	 var langue = '<?php echo $langue; ?>';
 	 if (sec > 0) {
 		 j = Math.floor (sec / n);
 		 h = Math.floor ((sec - (j * n)) / 3600);
@@ -85,10 +94,16 @@
   </p>
 </form>
  <?php 
- if ($_SESSION['lang']=="fr") echo utf8_encode($affiche['fin_compte']['fr']); else echo utf8_encode($affiche['fin_compte']['en']);
+echo utf8_encode($affiche['fin_compte'][$langue]);
 echo('<br /><br />articles :<br />');
-$article = recupArticles($mysql,$_SESSION['lang']);
+$article = recupArticles($mysql,$langue);
 foreach ($article as $key => $value){
+	?>
+	<a href="<?php echo $value['lien']; ?>">
+		<img src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>" />
+	</a>
+<?php
+	echo "<br />";
 	echo $value['titre'];
 	echo "<br /><br />";
 	echo $value['article'];
