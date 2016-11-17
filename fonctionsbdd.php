@@ -25,6 +25,9 @@ function recupTexte($mysql, $langue) {
 				case 'fin_compte':
 					$affiche['fin_compte']=$donnees;
 					break;
+				case 'boutique':
+					$affiche['boutique']=$donnees;
+					break;
 			}
 		}
 	}

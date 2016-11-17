@@ -1,8 +1,29 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <title>Dare Gorillaz</title>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dare Gorillaz</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700%7cSource+Sans+Pro:400,600,700" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/nivo-lightbox.css">
+	<link rel="stylesheet" type="text/css" href="js/assets/owl.carousel.css">
+	<!-- RS5.0 Styles -->
+	<link rel="stylesheet" type="text/css" href="css/css/settings.css">
+	<link rel="stylesheet" type="text/css" href="css/css/layers.css">
+	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	
+	<!-- Header -->
+	<header id="site-header">
 		<?php
 		require_once ('connexionbdd.php'); 
 		include 'fonctionsbdd.php';
@@ -14,100 +35,266 @@
 		}
 		if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
 			$langue='en';
-			?>
-			<form action="" method="post">	
-				<input type="hidden" name="l" value="fr" />
-				<input type="submit" id="langue_fr" value="Francais">
-			</form>
-			<?php
 		} else {
 			$langue='fr';
-			?>
-			<form action="" method="post">	
-				<input type="hidden" name="l" value="en" />
-				<input type="submit" id="langue_en" value="English">
-			</form>
-			
-		<?php 
 		}
+		$date=recupEvent($mysql);
+		$affiche=recupTexte($mysql, $langue);
 		?>
-		<script type="text/javascript">
-			<?php echo 'var langue = "'.json_encode($_SESSION['lang']).'";'; ?>
-		</script>
-    </head>
+		<form action="#" id="search-header" name="search-header">
+			<input type="search" name="search" placeholder="Type and Hit Enter..">
+			<button>Search</button>
+		</form>
+		<div class="container nav-wrapper">
+			<!-- Main Mneu -->
 
-    <body>
-    
+			<div class="extra-nav-left">
+				<a href="#" class="btn "><?php echo $affiche['boutique'][$langue]; ?></a >
+				<a href="#"><button id="mini-cart-toggle"><i class="fa fa-shopping-cart"></i></button></a>
+			</div>
 
-<?php
+			<nav id="site-navigation" class="site-navigation">
+				<ul id="main-menu">
+					<!--<li class="active menu-left">
+						<a href="#">Store</a>
+					</li>
+					<li class="menu-left">
+						<a href="#"><button id="mini-cart-toggle"><i class="fa fa-shopping-cart"></i></button></a>
+					</li>-->
+					<li class="logo_gorillaz">
+						<a href="#"><img src="img/logo.png" alt="logo_gorillaz"></a>
+					</li>
+					<li class="res_s">
+						<a href="#"><img src="img/ig.png" alt=""></a>
+					</li>
+					<li class="res_s">
+						<a href="#"><img src="img/fb.png" alt=""></a>
+					</li>
+					<li class="res_s">
+						<a href="#"><img src="img/twitter.png" alt=""></a>
+					</li>
+					<li class="res_s">
+						<a href="#"><img src="img/youtube.png" alt=""></a>
+					</li>
+					<li class="res_s">
+						<a href="#"><img src="img/tumblr.png" alt=""></a>
+					</li>
+				</ul>
+			</nav>
+			<!-- Extra Nav -->
+			<div class="extra-nav">
+				<!-- <a href="#" class="btn ">French</a > -->
+				<?php 
+					if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+						$langue='en';
+						?>
+						<form action="" method="post">	
+							<input class="btn " type="hidden" name="l" value="fr" />
+							<input class="btn " type="submit" id="langue_fr" value="Francais">
+						</form>
+						<?php
+					} else {
+					$langue='fr';
+					?>
+					<form action="" method="post">	
+						<input class="btn " type="hidden" name="l" value="en" />
+						<input class="btn " type="submit" id="langue_en" value="English">
+					</form>	
+					<?php 
+					}
+					?>
+			</div>
+		</div>
+	</header>
 	
-	$date=recupEvent($mysql);
-	$affiche=recupTexte($mysql, $langue);
-	echo $affiche['bonjour'][$langue];
-	?>
+	<!-- Site Content -->
+	<div class="site-content">
+		<!-- Recent Prodcuts -->
+		
+	</div>
 
-	</br></br>
-<label id="Compte"></label>
- <script type="text/javascript">
- var Affiche=document.getElementById("Compte");
- function Rebour() {
-	 var date1 = new Date();
-	 var date2 = new Date ('<?php echo $date; ?>');
-	 var sec = (date2 - date1) / 1000;
-	 var n = 24 * 3600;
-	 var langue = '<?php echo $langue; ?>';
-	 if (sec > 0) {
-		 j = Math.floor (sec / n);
-		 h = Math.floor ((sec - (j * n)) / 3600);
-		 mn = Math.floor ((sec - ((j * n + h * 3600))) / 60);
-		 sec = Math.floor (sec - ((j * n + h * 3600 + mn * 60)));
-		if (langue == 'fr') {
-			Affiche.innerHTML = j +" j "+ h +" h "+ mn +" min "+ sec + " s";
-		} else {
-			Affiche.innerHTML = j +" d "+ h +" h "+ mn +" min "+ sec + " s";
-		} 
-	 }
-	 tRebour=setTimeout ("Rebour();", 1000);
- }
- Rebour();
- </script>
- <form action="envoimail.php" id="contact-form" method="post">
-	<p>Dear Erlen,</p>
-	<p>My
-		<label for="your-name">name</label> is
-		<input type="text" name="your-name" id="your-name" minlength="3" placeholder="(your name here)" required> and
-	</p>
+	<div class="contact-home-wrapper">
+		<div class="overlay-section">
+			<div class="container section">
+				<div class="row contact-from">
+					<form class="col-xs-12 general-form clearfix" action="contact.php" method="post" name="contact" id="contact-form">
+						<div class="field-group row">
+							<div class="field col-sm-12">
+								<h5>Your Name <span>*</span></h5>
+								<input name="name" type="text" class="required" title="Please type your name." placeholder="Name...">
+							</div>
+							<div class="field col-sm-12">
+								<h5>Your Email <span>*</span></h5>
+								<input name="email" type="text" class="required" title="Please type your email." placeholder="Email...">
+							</div>
+						</div>
+						<button class="btn big"><i class="fa fa-paper-plane"></i>Send Message</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer id="colophon">
+		<div class="container">
+			<div class="row">
+				<div class="widget col-sm-4 about-widget ">
+					<h4 class="widget-title">About US</h4>
+					<div class="widget-content">
+						<p>Lorem ipsum dolor sit amet, consectetur  adipiscing eli esent massa libero, tristiq ue placerat sapien in, tincidmollis dui. Curabitur gravida felis turpis, non malesua est placerat eget. Cras vel fringilla mi. </p>
+						<ul class="social-networks bg clearfix">
+							<li><a class="fa fa-facebook" href="http://facebook.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://plus.google.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://twitter.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://spotify.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://soundcloud.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://youtube.com"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="widget col-sm-4 twitter-widget">
+					<h4 class="widget-title">Twitter</h4>
+					<div id="twitter-feed"></div>
+				</div>	
+				<div class="widget col-sm-4 instagram-widget">
+					<h4 class="widget-title">Instagram</h4>
+					<ul id="footer-insta" class="clearfix"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-bar">
+			<div class="container relative-pos z-index">
+				<p class="col-sm-6">Copyright 2016 <a href="#">FutureThemes</a> | Allrights Reserved</p>
+			</div>
+		</div>
+	</footer>
 
-	<p>my
-		<label for="email">email address</label> is
-		<input type="email" name="your-email" id="email" placeholder="(your email address)" required>
-	</p>
+	<!-- Go to top button -->
+	<div id="back-to-top" class="fa fa-arrow-circle-up"></div>
+	<div id="pause-player" class="fa fa-play-circle"></div>
 
-	<p> I have a
-		<label for="your-message">message</label> for you,
-	</p>
-	<p>
-		<textarea name="your-message" id="your-message" placeholder="(your msg here)" class="expanding" required></textarea>
-	</p>
-	<p>
-		<button type="submit">Envoyer</button>
-  </p>
-</form>
- <?php 
-echo utf8_encode($affiche['fin_compte'][$langue]);
-echo('<br /><br />articles :<br />');
-$article = recupArticles($mysql,$langue);
-foreach ($article as $key => $value){
-	?>
-	<a href="<?php echo $value['lien']; ?>">
-		<img src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>" />
-	</a>
-<?php
-	echo "<br />";
-	echo $value['titre'];
-	echo "<br /><br />";
-	echo $value['article'];
-}
- ?>
-    </body>
+	<!-- Scripts -->
+	<script type="text/javascript" src="js/jquery2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+	<script type="text/javascript" src="js/jplayer.playlist.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	
+	<script type="text/javascript" src="js/countdown.js"></script>
+	<script type="text/javascript" src="js/twitterFetcher.js"></script>
+	<script type="text/javascript" src="js/instafeed.min.js"></script>
+	<script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/mc.validate.js"></script>
+	<!-- RS5.0 Core JS Files -->
+	<script type="text/javascript" src="js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+	<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+	<script type="text/javascript" src="js/revolution.extension.video.min.js"></script>
+	<script type="text/javascript" src="js/revolution.extension.slideanims.min.js"></script>
+	<script type="text/javascript" src="js/revolution.extension.navigation.min.js"></script>
+	<script type="text/javascript" src="js/revolution.extension.layeranimation.min.js"></script>
+	<script type="text/javascript" src="js/revolution.extension.actions.min.js"></script>
+	<!-- END RS5.0 Core JS Files -->
+	<script type="text/javascript" src="js/custom_js.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+    	"use strict";
+		// First Player
+    	var changeTrack = function changeTrack(event) {
+	        var current = myPlaylist.current,
+	        	playlist = myPlaylist.playlist;       
+	        $.each(playlist, function (index, obj) {
+	            if (index == current) {
+	                $("#nowPlaying .artist-name").html(obj.artist);
+	                $("#nowPlaying .track-name").html(obj.title);
+	            }
+	        });
+	    };
+
+		var myPlaylist = new jPlayerPlaylist({
+			jPlayer: "#jquery_jplayer_1",
+			cssSelectorAncestor: "#jp_container_1",
+		}, [
+			{
+				artist: "Titan Slayer",
+				title:"Sisters of Furry",
+				mp3:"images/audios/Track-3.mp3",
+				poster: "images/posters/poster-1.jpg",
+				free: true
+			},
+			{	
+				artist: "Titan Slayer",
+				title:"Tempered Song",
+				mp3:"images/audios/Track-1.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer First",
+				title:"Cyber Sonnet",
+				mp3:"images/audios/Track-2.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer feat Rihanna",
+				title:"Free Song",
+				mp3:"images/audios/Track-4.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer",
+				title:"Cro Magnon Man",
+				mp3:"images/audios/Track-5.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer feat Adelle",
+				title:"Your Face",
+				mp3:"images/audios/Track-3.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer",
+				title:"Lentement",
+				mp3:"images/audios/Track-1.mp3",
+				poster: "images/posters/poster-1.jpg"
+			},
+			{
+				artist: "Titan Slayer",
+				title:"Cro Magnon Man",
+				mp3:"images/audios/Track-2.mp3",
+				poster: "images/posters/poster-1.jpg"
+			}
+		],{
+			playlistOptions: {
+			    enableRemoveControls: true
+			},
+			swfPath: "assets/jplayer/jplayer",
+			supplied: "oga, mp3",
+			wmode: "window",
+			useStateClassSkin: true,
+			autoBlur: false,
+			smoothPlayBar: false,
+			keyEnabled: true,
+			size: {
+                width: "120px",
+                height: "120px"
+            },
+            ready: changeTrack,
+            play: function(event) {
+            	changeTrack();
+            	var $mythis = $(this);
+            	$mythis.removeClass('spin-disk');
+		    	setTimeout( function() { $mythis.addClass('spin-disk'); }, 100);
+		    },
+		    pause: function(event) {
+		    	$(this).removeClass('spin-disk');
+		    } 
+		});
+	});//end .ready
+	</script>
+
+</body>
 </html>
