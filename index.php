@@ -27,13 +27,24 @@
   	</head>
 
     <body>
+	<script type="text/javascript">
+	
 
+	$('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
+});
+// scrollTo is the </script>
     <!-- Header -->
 	<header id="site-header">
-		<form action="#" id="search-header" name="search-header">
-			<input type="search" name="search" placeholder="Type and Hit Enter..">
-			<button>Search</button>
-		</form>
 		<div class="container nav-wrapper">
 			<!-- Main Mneu -->
 
@@ -41,28 +52,28 @@
 			<nav id="site-navigation" class="site-navigation">
 				<ul id="main-menu">
 					<li class="active menu-left">
-						<a href="#">Store</a>
+						<a href="#store">Store</a>
 					</li>
 					<li class="menu-left">
 						<a href="#"><i class="fa fa-shopping-cart"></i></a>
 					</li>
 					<li class="logo_gorillaz">
-						<a href="#"><img src="img/logo.png" alt="logo_gorillaz"></a>
+						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz"></a>
 					</li>
 					<li class="res_s">
-						<a href="#"><img src="img/ig.png" alt=""></a>
+						<a href="https://www.instagram.com/gorillaz/"><img src="img/ig.png" alt=""></a>
 					</li>
 					<li class="res_s">
-						<a href="#"><img src="img/fb.png" alt=""></a>
+						<a href="https://www.facebook.com/Gorillaz/?fref=ts"><img src="img/fb.png" alt=""></a>
 					</li>
 					<li class="res_s">
-						<a href="#"><img src="img/twitter.png" alt=""></a>
+						<a href="https://twitter.com/gorillaz?lang=fr"><img src="img/twitter.png" alt=""></a>
 					</li>
 					<li class="res_s">
 						<a href="#"><img src="img/youtube.png" alt=""></a>
 					</li>
 					<li class="res_s">
-						<a href="#"><img src="img/tumblr.png" alt=""></a>
+						<a href="http://dare-gorillaz.tumblr.com/"><img src="img/tumblr.png" alt=""></a>
 					</li>
 					<li class="res_s last">
 						<?php
@@ -80,7 +91,7 @@
 			$langue='en';
 
 			?>
-			<form action="" method="post" id="language">	
+			<form action="index.php" method="post" id="language">	
 				<input type="hidden" name="l" value="fr" />
 				<input type="submit" id="langue_fr" value="Francais">
 			</form>
@@ -88,7 +99,7 @@
 		} else {
 			$langue='fr';
 			?>
-			<form action="" method="post" id="language">	
+			<form action="index.php" method="post" id="language">	
 				<input type="hidden" name="l" value="en" />
 				<input type="submit" id="langue_en" value="English">
 			</form>
@@ -188,12 +199,12 @@ foreach ($article as $key => $value){
  </div>
 </div>
 <!-- Recent Prodcuts -->
-		<div class="recent-products-home-wrapper ">
+		<div id="store" class="recent-products-home-wrapper ">
 			<div class="container section">
 				<div class="section-title pdb-30">
-					<h2>Recent Products</h2>
+					<h2>Merch</h2>
 					<div class="sep"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
+					<p>Get your gear directly from the website !</p>
 				</div>
 				<div class="row recent-products">
 					<div class="col-md-3 col-sm-6">
@@ -206,7 +217,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Neo T-Shirt</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Russel SHIRT</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								<h5 class="price">$25.00</h5>
@@ -223,7 +234,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Gorogot - MTBFest</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Noodles shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								
@@ -241,7 +252,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Lacuna Coil - Comalies</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Murdoc shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								
@@ -259,7 +270,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Titan Slayer - Sisters of Furry</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Band 1 shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								
@@ -277,7 +288,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Titan Slayer - Sisters of Furry</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Band 2 shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								
@@ -295,7 +306,7 @@ foreach ($article as $key => $value){
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Titan Slayer - Sisters of Furry</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">2-D shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">S - M - L - XL - XXL</h6>
 								
@@ -306,6 +317,15 @@ foreach ($article as $key => $value){
 				</div>
 			</div>
 		</div>
+	
+		<div id="questions" style="bottom: -1px;">
+			<a href="#msg">Des questions ? </a>
+		</div>
+			<!--
+		<div id="msg" class="open" >
+			<img src="img/env.png" alt="enveloppe">
+			<p class="msg">Your message has been sent</p>
+		</div>-->
 	
 	<div id="back-to-top" class="fa fa-arrow-circle-up"></div>
 	<div id="pause-player" class="fa fa-play-circle"></div>

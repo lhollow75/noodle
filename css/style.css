@@ -735,6 +735,7 @@ li.menu-left {
   display: block;
   width: 100%;
   text-align: center;
+  margin-top: 20px;
 }
 #site-header #site-navigation #main-menu > li {
   display: inline-block;
@@ -742,10 +743,9 @@ li.menu-left {
   padding: 0 10px;
   vertical-align: bottom;
 }
-#site-header #site-navigation #main-menu > li.active > a,
-#site-header #site-navigation #main-menu > li:hover > a {
-  background: #8c8428;
-  color: #fff;
+#site-header #site-navigation #main-menu > li.active > a{
+
+  color: #8c8428;
 }
 #site-header #site-navigation #main-menu > li > a {
   display: block;
@@ -4323,4 +4323,46 @@ p.fin_compte{
   font-size: 21px;
   color: #000;
   font-family: Lato,sans-serif;
+}
+#msg {
+    text-align: center;
+    background: #fff;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 200px;
+    padding: 70px 50px;
+    width: 700px;
+    display: block;
+    z-index: 1000;
+    border: 2px solid #8c8428;
+}
+.msg{
+  font-size: 36px;
+  color: #704615;
+  text-transform: uppercase;
+  font-family: Lato, sans-serif;
+  margin-top: 40px;
+}
+#language input {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 10px;
+    background: #fff;
+    border: none;
+    color: #8c8428;
+}
+div#questions {
+    float: right;
+    margin-right: 60px;
+    background: url(../img/btn_questions.png);
+    color: #fff;
+    padding: 7px 10px 7px 50px;
+    position: fixed;
+    right: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
 }
