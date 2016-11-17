@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MusicBase HTML</title>
+	<title>Dare Gorillaz</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
 	<!-- Google Fonts -->
@@ -19,6 +19,30 @@
 	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<?php
+	require_once ('connexionbdd.php'); 
+	include 'fonctionsbdd.php';
+	include 'mail.php';
+	session_start();
+	if (!empty($_POST)){
+		$_SESSION['lang']=$_POST['l'];
+	} else {
+		$_SESSION['lang']='fr';
+	}
+	if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+		$langue='en';
+	} else {
+		$langue='fr';
+	}
+	$date=recupEvent($mysql);
+	$affiche=recupTexte($mysql, $langue);
+	$article = recupArticles($mysql, $langue);
+	?>
+	<script type="text/javascript">
+		function open_infos(){
+			window.open('envoiok.php?nom:<?php echo $_POST["name"];?>','messagerecu','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');
+		}
+	</script>
 </head>
 <body>
 	
@@ -31,10 +55,25 @@
 		<div class="container nav-wrapper">
 			<!-- Logo -->
 			<div class="site-branding">
-				<a href="index.html">
-					<span class="first-word colored">Music</span>
-					<span class="second-word">Base</span>
-				</a>
+				<?php 
+					if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+						$langue='en';
+						?>
+						<form action="" method="post">	
+							<input class="btn " type="hidden" name="l" value="fr" />
+							<input class="btn " type="submit" id="langue_fr" value="Francais">
+						</form>
+						<?php
+					} else {
+					$langue='fr';
+					?>
+					<form action="" method="post">	
+						<input class="btn " type="hidden" name="l" value="en" />
+						<input class="btn " type="submit" id="langue_en" value="English">
+					</form>	
+					<?php 
+					}
+					?>
 			</div>
 			<!-- Main Mneu -->
 			<nav id="site-navigation" class="site-navigation">
@@ -55,7 +94,7 @@
 						<a href="#blog">Blog</a>
 					</li>
 					<li class="">
-						<a href="#store">Store</a>
+						<a href="#store"><?php echo $affiche['boutique'][$langue]; ?></a>
 					</li>
 					<li class="">
 						<a href="#contact">Contact</a>
@@ -145,7 +184,7 @@
 							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"   
 				        	data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"event-single.html"}]'
 				        	data-start="900"
-				        	data-responsive_offset="on">Learn More
+				        	data-responsive_offset="on"><span><?php echo $affiche['savoirplus'][$langue]; ?></span>
 				        </div>
 
 					</li>
@@ -629,47 +668,31 @@
 			<div class="overlay-section">
 				<div class="container section ">
 					<div class="section-title pdb-30">
-						<h2>Latest News</h2>
+						<h2><?php echo $affiche['dernieresn'][$langue]; ?></h2>
 						<div class="sep"></div>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
 					</div>
 					<div class="row blog-posts">
-						<div class="col-sm-4">
-							<div class="blog-post-home">
-								<div class="bordered img-wrapper">
-									<div class="overlay"></div>
-									<img class="img-responsive" src="images/mini/2.jpg" alt="">
+						<?php
+						foreach ($article as $key => $value){
+							?>
+							<div class="col-sm-4">
+								<div class="blog-post-home">
+									<div class="bordered img-wrapper">
+										<div class="overlay"></div>
+										<a href="<?php echo $value['lien']; ?>">
+											<img class="img-responsive" src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>">
+										</a>
+									</div>
+									<a href="blog-single.html"><h3><?php echo $value['titre']; ?></h3></a>
+									<h5><i class="fa fa-clock-o"></i><?php echo $value['date_insert']; ?></h5>
+									<p><?php echo $value['article']; ?></p>
+									<a href="blog-single.html" class="btn">Read More</a>
 								</div>
-								<a href="blog-single.html"><h3>Filming For a New Clip</h3></a>
-								<h5><i class="fa fa-clock-o"></i>Thuesday 15, Jully</h5>
-								<p>Suspendisse placerat lorem et erat sodales laore etonec viverra laoreet odio, velcipit quam scelerisque pulvi nar. Donec a tortor ut ex commodo aliquet quis</p>
-								<a href="blog-single.html" class="btn">Read More</a>
 							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="blog-post-home">
-								<div class="bordered img-wrapper">
-									<div class="overlay"></div>
-									<img class="img-responsive" src="images/mini/2.jpg" alt="">
-								</div>
-								<a href="blog-single.html"><h3>New Guitarist For K Project</h3></a>
-								<h5><i class="fa fa-clock-o"></i>Thuesday 15, Jully</h5>
-								<p>Suspendisse placerat lorem et erat sodales laore etonec viverra laoreet odio, velcipit quam scelerisque pulvi nar. Donec a tortor ut ex commodo aliquet quis</p>
-								<a href="blog-single.html" class="btn">Read More</a>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="blog-post-home">
-								<div class="bordered img-wrapper">
-									<div class="overlay"></div>
-									<img class="img-responsive" src="images/mini/2.jpg" alt="">
-								</div>
-								<a href="blog-single.html"><h3>Best Concert Organized by MusicBase</h3></a>
-								<h5><i class="fa fa-clock-o"></i>Thuesday 15, Jully</h5>
-								<p>Suspendisse placerat lorem et erat sodales laore etonec viverra laoreet odio, velcipit quam scelerisque pulvi nar. Donec a tortor ut ex commodo aliquet quis</p>
-								<a href="blog-single.html" class="btn">Read More</a>
-							</div>
-						</div>
+						<?php
+						}
+						 ?>
 					</div>
 					<div class="btn-wrapper pdt-70">
 						<a href="blog.html" class="btn big"><i class="fa fa-user"></i>See All News</a>
@@ -792,31 +815,31 @@
 			<div class="overlay-section">
 				<div class="container section">
 					<div class="section-title pdb-60">
-						<h2>Get in Touch</h2>
+						<h2><?php echo $affiche['contact'][$langue]; ?></h2>
 						<div class="sep"></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
+						<p><?php echo $affiche['text_conta'][$langue]; ?></p>
 					</div>
 					<div class="row contact-from">
 						<form class="col-xs-12 general-form clearfix" action="contact.php" method="post" name="contact" id="contact-form">
 							<div class="field-group row">
 								<div class="field col-sm-4">
-									<h5>Your Name <span>*</span></h5>
-									<input name="name" type="text" class="required" title="Please type your name." placeholder="Name...">
+									<h5><?php echo $affiche['nom'][$langue]; ?><span>*</span></h5>
+									<input name="name" type="text" class="required" title="Please type your name." placeholder="<?php echo $affiche['ph_nom'][$langue]; ?>">
 								</div>
 								<div class="field col-sm-4">
-									<h5>Your Email <span>*</span></h5>
+									<h5><?php echo $affiche['email'][$langue]; ?><span>*</span></h5>
 									<input name="email" type="text" class="required" title="Please type your email." placeholder="Email...">
 								</div>
 								<div class="field col-sm-4">
-									<h5>Your Subject</h5>
-									<input name="Subject" type="text" placeholder="Subject...">
+									<h5><?php echo $affiche['sujet'][$langue]; ?></h5>
+									<input name="Subject" type="text" placeholder="<?php echo $affiche['ph_sujet'][$langue]; ?>">
 								</div>
 							</div>
 							<div class="field">
-								<h5>Your Message <span>*</span></h5>
+								<h5><?php echo $affiche['message'][$langue]; ?><span>*</span></h5>
 								<textarea name="message" cols="15" rows="5" class="required" placeholder="Message..." title="Please type a message."></textarea>
 							</div>
-							<button class="btn big"><i class="fa fa-paper-plane"></i>Send Message</button>
+							<button onclick="javascript:open_infos();" class="btn big"><i class="fa fa-paper-plane"></i><?php echo $affiche['env_mess'][$langue]; ?></button>
 						</form>
 					</div>
 				</div>
@@ -836,8 +859,8 @@
 							<form action="//gygsdesign.us13.list-manage.com/subscribe/post?u=2507fc14e180868221f4b663d&amp;id=bff66133bb" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 								<div id="mc_embed_signup_scroll">
 									<div class="mc-field-group">
-										<input type="email" value="" name="EMAIL" class="required email emailinput" id="mce-EMAIL" placeholder="Enter Your E-mail Here...">
-										<div class="button-wrap"><button name="subscribe" type="submit" class="button" id="mc-embedded-subscribe">Subscribe</button></div>
+										<input type="email" value="" name="EMAIL" class="required email emailinput" id="mce-EMAIL" placeholder="<?php echo $affiche['ph_email'][$langue]; ?>">
+										<div class="button-wrap"><button name="subscribe" type="submit" class="button" id="mc-embedded-subscribe"><?php echo $affiche['nl_insc'][$langue]; ?></button></div>
 									</div>
 									<div id="mce-responses" class="clear">
 										<div class="response" id="mce-error-response" style="display:none"></div>
@@ -859,9 +882,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="widget col-sm-4 about-widget ">
-					<h4 class="widget-title">About US</h4>
+					<h4 class="widget-title"><?php echo $affiche['apropos'][$langue]; ?></h4>
 					<div class="widget-content">
-						<p>Lorem ipsum dolor sit amet, consectetur  adipiscing eli esent massa libero, tristiq ue placerat sapien in, tincidmollis dui. Curabitur gravida felis turpis, non malesua est placerat eget. Cras vel fringilla mi. </p>
+						<p><?php echo $affiche['txtapropos'][$langue]; ?></p>
 						<ul class="social-networks bg clearfix">
 							<li><a class="fa fa-facebook" href="http://facebook.com"></a></li>
 							<li><a class="fa fa-facebook" href="http://plus.google.com"></a></li>

@@ -110,7 +110,6 @@
 	<!-- Site Content -->
 	<div class="site-content">
 		<!-- Recent Prodcuts -->
-		
 	</div>
 
 	<div class="contact-home-wrapper">
