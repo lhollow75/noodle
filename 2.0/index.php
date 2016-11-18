@@ -240,7 +240,7 @@
 								<img  class="img-responsive" src="images/members/4.jpg" alt="">
 								<h3>Plastic Beach</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -255,7 +255,7 @@
 								<img  class="img-responsive" src="images/members/5.jpg" alt="">
 								<h3>Demon Days</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -270,7 +270,7 @@
 								<img  class="img-responsive" src="images/members/6.jpg" alt="">
 								<h3>The Fall</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -285,7 +285,7 @@
 								<img  class="img-responsive" src="images/members/7.jpg" alt="">
 								<h3>G-Sides</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -300,7 +300,7 @@
 								<img  class="img-responsive" src="images/members/8.jpg" alt="">
 								<h3>D-Sides</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -315,7 +315,7 @@
 								<img  class="img-responsive" src="images/members/9.jpg" alt="">
 								<h3>Gorillaz</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -330,7 +330,7 @@
 								<img  class="img-responsive" src="images/members/11.jpg" alt="">
 								<h3>Laika Come Home</h3>
 								<div class="show-on-hover">
-									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+									<p></p>
 								</div>
 							</div>
 						</div>
@@ -346,17 +346,17 @@
 			<div class="overlay-section">
 				<div class="container section">
 					<div class="section-title pdb-30">
-						<h2>Upcoming Events</h2>
+						<h2><?php echo $affiche['even'][$langue]; ?></h2>
 						<div class="sep"></div>
-						<p>Don't miss anything about our international tour</p>
+						<p><?php echo $affiche['ph_even'][$langue]; ?></p>
 					</div>
 					<div class="events">
 						<div class="next-event-countdown">
 							<ul class="events-home-countdown start_countdown clearfix" data-date="31 october 2018 12:00:00">
-							    <li><span class="days">00</span><span class="timeRefDays"> days</span></li>
-							    <li><span class="hours">00</span><span class="timeRefHours">hours</span></li>
-							    <li><span class="minutes">00</span><span class="timeRefMinutes">mins</span></li>
-							    <li><span class="seconds">00</span><span class="timeRefSeconds">secs</span></li>
+							    <li><span class="days">00</span> <span class="timeRefDays"><?php echo $affiche['jours'][$langue]; ?></span></li>
+							    <li><span class="hours">00</span><span class="timeRefHours"><?php echo $affiche['heures'][$langue]; ?></span></li>
+							    <li><span class="minutes">00</span><span class="timeRefMinutes"><?php echo $affiche['min'][$langue]; ?></span></li>
+							    <li><span class="seconds">00</span><span class="timeRefSeconds"><?php echo $affiche['sec'][$langue]; ?></span></li>
 							</ul> 
 						</div>
 						<div class="event clearfix">
@@ -367,7 +367,7 @@
 							<h4 class="title">Nocturna Show in Bucharest</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Sala Polivalenta, Bucharest</h5>
 							<div class="btn-wrapper">
-								<a href="#" class="btn">Buy Tickets</a>
+								<a href="#" class="btn"><?php echo $affiche['achat_tick'][$langue]; ?></a>
 							</div>
 						</div>
 						<div class="event clearfix even">
@@ -378,7 +378,7 @@
 							<h4 class="title">Titan Slayer Live in Underground Pub</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Stadium, France</h5>
 							<div class="btn-wrapper">
-								<a href="#" class="btn">Buy Tickets</a>
+								<a href="#" class="btn"><?php echo $affiche['achat_tick'][$langue]; ?></a>
 							</div>
 						</div>
 						<div class="event clearfix">
@@ -389,7 +389,7 @@
 							<h4 class="title">Clitgore at Rockstad Extreme Fest</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Dt, Germany</h5>
 							<div class="btn-wrapper">
-								<a href="#" class="btn">Buy Tickets</a>
+								<a href="#" class="btn"><?php echo $affiche['achat_tick'][$langue]; ?></a>
 							</div>
 						</div>
 						<div class="event clearfix even">
@@ -400,7 +400,7 @@
 							<h4 class="title">K Project First Public Show in Altlantis</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>UK, London</h5>
 							<div class="btn-wrapper">
-								<a href="#" class="btn">Buy Tickets</a>
+								<a href="#" class="btn"><?php echo $affiche['achat_tick'][$langue]; ?></a>
 							</div>
 						</div>
 						<div class="event clearfix">
@@ -411,13 +411,13 @@
 							<h4 class="title">Titan Slayer New Years Day!</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Location no.45, Romania</h5>
 							<div class="btn-wrapper">
-								<a href="#" class="btn">Buy Tickets</a>
+								<a href="#" class="btn"><?php echo $affiche['achat_tick'][$langue]; ?></a>
 							</div>
 						</div>
 					</div>
 					<div class="btn-wrapper pdt-70">
-						<a href="#" class="btn big first"><i class="fa fa-user"></i>All Events</a>
-						<a href="#" class="btn big dark"><i class="fa fa-user"></i>Past Events</a>
+						<a href="#" class="btn big first"><i class="fa fa-user"></i><?php echo $affiche['tte_dates'][$langue]; ?></a>
+						<a href="#" class="btn big dark"><i class="fa fa-user"></i><?php echo $affiche['past_event'][$langue]; ?></a>
 					</div>
 				</div>
 			</div>
@@ -462,14 +462,14 @@
 									<div class="bordered img-wrapper">
 										<div class="overlay"></div>
 										<a href="<?php echo $value['lien']; ?>">
-										<img class="img-responsive" src="images/articles/1.jpg">
+										<img class="img-responsive" src="images/articles/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>">
 										<!--	<img class="img-responsive" src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>">
 										--></a>
 									</div>
 									<a href="article.html"><h3><?php echo $value['titre']; ?></h3></a>
 									<h5><i class="fa fa-clock-o"></i><?php echo $value['date_insert']; ?></h5>
-									<p><?php echo $value['article']; ?></p>
-									<a href="article.html" class="btn">Read More</a>
+									<p><?php echo substr($value['article'], 0, 500); ?>...</p>
+									<a href="article.html" class="btn"><?php echo $affiche['lire_plus'][$langue]; ?></a>
 								</div>
 							</div>
 						<?php
@@ -477,7 +477,7 @@
 						 ?>
 					</div>
 					<div class="btn-wrapper pdt-70">
-						<a href="#" class="btn big"><i class="fa fa-user"></i>See All News</a>
+						<a href="#" class="btn big"><i class="fa fa-user"></i><?php echo $affiche['tte_news'][$langue]; ?></a>
 					</div>
 				</div>
 			</div>
@@ -487,7 +487,7 @@
 		<div id="store" class="recent-products-home-wrapper ">
 			<div class="container section">
 				<div class="section-title pdb-30">
-					<h2>Merch</h2>
+					<h2><?php echo $affiche['boutique'][$langue]; ?></h2>
 					<div class="sep"></div>
 				</div>
 				<div class="row recent-products">
@@ -497,7 +497,7 @@
 								<img class="img-responsive" src="images/products/1.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -521,7 +521,7 @@
 								<img class="img-responsive" src="images/products/2.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -545,7 +545,7 @@
 								<img class="img-responsive" src="images/products/3.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -569,7 +569,7 @@
 								<img class="img-responsive" src="images/products/4.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i><?php echo $affiche['ajout_pani'][$langue]; ?></a>
 									</div>
 								</div>
 							</div>
@@ -633,7 +633,7 @@
 				<div class="row">
 					<div class="title-block col-xs-12 col-sm-6">
 						<i class="fa fa-envelope"></i>
-						<h2 class="newsletter-title">Get updates</h2>
+						<h2 class="newsletter-title"><?php echo $affiche['ph_news'][$langue]; ?></h2>
 					</div>
 					<div class="form-block col-xs-12 col-sm-6">
 						<div id="mc_embed_signup" >
