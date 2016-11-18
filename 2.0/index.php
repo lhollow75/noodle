@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dare Gorillaz</title>
+	<title>Gorillaz</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
 	<!-- Google Fonts -->
@@ -12,11 +12,11 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" type="text/css" href="js/assets/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
 	<!-- RS5.0 Styles -->
-	<link rel="stylesheet" type="text/css" href="css/css/settings.css">
-	<link rel="stylesheet" type="text/css" href="css/css/layers.css">
-	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
+	<link rel="stylesheet" type="text/css" href="css/layers.css">
+	<link rel="stylesheet" type="text/css" href="css/navigation.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<?php
@@ -79,16 +79,16 @@
 			<nav id="site-navigation" class="site-navigation">
 				<ul id="main-menu">
 					<li class="active">
-						<a href="#music">Music</a>
+						<a href="#albums">Music</a>
 					</li>
 					<li class="">
 						<a href="#videos">Vidéos</a>
 					</li>
-					<li class="logo_gorillaz">
-						<a href="#index.html"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
-					</li>
 					<li class="">
 						<a href="#tour">Tour</a>
+					</li>
+					<li class="logo_gorillaz">
+						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
 					</li>
 					<li class="">
 						<a href="#blog">Blog</a>
@@ -141,101 +141,7 @@
 		 			<!-- Slide 1 -->
 					<li data-transition="fadefromleft" data-thumbnail="images/drawings/test1.png">
 						<!-- Main Image -->
-						<img src="images/drawings/test1.png" alt="">
-
-
-						<!-- Layer 1 -->
-						<div class="tp-caption big-caption tp-resizeme"
-							id="slide-01-layer-01"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="240"
-				        	data-width="['none']"
-							data-height="['none']"  
-				        	data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
-				        	data-start="700"
-				        	data-responsive_offset="on"><span>K-Project in Amsterdam</span>
-				        </div>
-
-				        <!-- Layer 2 -->
-				        <div class="tp-caption normal-caption bordered-caption tp-resizeme"
-							id="slide-01-layer-02"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="295"
-				        	data-width="['none']"
-							data-height="['none']"  
-				        	data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
-				        	data-start="700"
-				        	data-responsive_offset="on"><span>Don't miss The Second K-Project Public Show</span>
-				        </div>
-
-				        <!-- Layer 3 -->
-				        <div class="tp-caption btn big" 
-				       		id="slide-01-layer-03"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="370"
-				        	data-width="['none']"
-							data-height="['none']"
-							data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"   
-				        	data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"event-single.html"}]'
-				        	data-start="900"
-				        	data-responsive_offset="on"><span><?php echo $affiche['savoirplus'][$langue]; ?></span>
-				        </div>
-
-					</li>
-					<!-- Slide 1 -->
-					<li data-transition="fadefromleft" data-thumbnail="images/drawings/test1.png">
-						<!-- Main Image -->
-						<img src="images/drawings/test1.png" alt="">
-
-
-						<!-- Layer 1 -->
-						<div class="tp-caption big-caption tp-resizeme"
-							id="slide-01-layer-01"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="240"
-				        	data-width="['none']"
-							data-height="['none']"  
-				        	data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
-				        	data-start="700"
-				        	data-responsive_offset="on"><span>Titan Slayer Best Concert</span>
-				        </div>
-
-				        <!-- Layer 2 -->
-				        <div class="tp-caption normal-caption bordered-caption tp-resizeme"
-							id="slide-01-layer-02"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="295"
-				        	data-width="['none']"
-							data-height="['none']"  
-				        	data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" 
-				        	data-start="700"
-				        	data-responsive_offset="on"><span>A concert That we never forget</span>
-				        </div>
-
-				        <!-- Layer 3 -->
-				        <div class="tp-caption btn big" 
-				       		id="slide-01-layer-03"
-				       		data-x="center" data-hoffset="0" 
-				        	data-y="top" data-voffset="370"
-				        	data-width="['none']"
-							data-height="['none']"
-							data-transform_idle="o:1;"
- 							data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;" 
-							data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"   
-				        	data-actions='[{"event":"click","action":"simplelink","target":"_self","url":"event-single.html"}]'
-				        	data-start="900"
-				        	data-responsive_offset="on">Learn More
-				        </div>
+						<img src="images/drawings/test1.jpg" alt="">
 
 					</li>
 		 		</ul>
@@ -287,311 +193,151 @@
 			</div>
 		</div>
 		
-		<!-- Albums -->
-		<div class="albums-home-wrapper">
-			<div class="overlay-section">
-				<div class="container section">
-					<div class="section-title pdb-30">
-						<h2>Latest Albums</h2>
-						<div class="sep"></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
-					</div>
-					<div class="row albums">
-						<div class="col-sm-4">
-							<div class="album-container bordered
-							hover-effect">
-								<div class="overlay"></div>
-								<img  class="img-responsive" src="images/2.jpg" alt="">
-								<div class="info-block">
-									<div class="album-title">
-										<h3>Lacuna Coil</h3>
-										<h1>Comalies</h1>
-									</div>
-									<div class="show-on-hover">
-										<div class="sep"></div>
-										<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-										<a href="album-single.html" class="btn">See Album</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="album-container bordered hover-effect">
-								<div class="overlay"></div>
-								<img class="img-responsive" src="images/2.jpg" alt="">
-								<div class="info-block">
-									<div class="album-title">
-										<h3>Titan Slayer</h3>
-										<h1>Sisters of Fury</h1>
-									</div>
-									<div class="show-on-hover">
-										<div class="sep"></div>
-										<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-										<a href="album-single.html" class="btn">See Album</a>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="album-container bordered
-							 hover-effect">
-								<div class="overlay"></div>
-								<img class="img-responsive" src="images/2.jpg" alt="">
-								<div class="info-block">
-									<div class="album-title">
-										<h3>Between Colors</h3>
-										<h1>Sea Lover</h1>
-									</div>
-									<div class="show-on-hover">
-										<div class="sep"></div>
-										<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-										<a href="album-single.html" class="btn">See Album</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="btn-wrapper pdt-70">
-						<a href="albums.html" class="btn big"><i class="fa fa-dot-circle-o"></i>All Albums</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
 		<!-- Artist -->
-		<div class="container artists-home-wrapper section">
+		<div id="albums" class="container artists-home-wrapper section">
 			<div class="section-title pdb-60">
-				<h2>Band Members</h2>
-				<div class="sep"></div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
+				<h2>ALbums</h2>
 			</div>
 			<div class="row artists">
+
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive"  src="images/backgrounds/1.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/4.jpg" alt="">
-							<h3>Matthew Franklin</h3>
-							<h5>Guitarist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album2.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive" src="images/backgrounds/cov1.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/0.jpg" alt="">
+								<h3>Plastic Winter</h3>
+								<div class="show-on-hover">
+									<p>See the album</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/2.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/5.jpg" alt="">
-							<h3>Catherine Davis</h3>
-							<h5>Vocalist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://tumblr.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive"  src="images/backgrounds/cov2.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/4.jpg" alt="">
+								<h3>Plastic Beach</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/3.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/6.jpg" alt="">
-							<h3>Gregory Dixon</h3>
-							<h5>Drummer</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive" src="images/backgrounds/cov3.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/5.jpg" alt="">
+								<h3>Demon Days</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive"  src="images/backgrounds/1.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/7.jpg" alt="">
-							<h3>Matthew Franklin</h3>
-							<h5>Guitarist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive" src="images/backgrounds/cov4.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/6.jpg" alt="">
+								<h3>The Fall</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/2.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/8.jpg" alt="">
-							<h3>Catherine Davis</h3>
-							<h5>Vocalist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://tumblr.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive"  src="images/backgrounds/cov5.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/7.jpg" alt="">
+								<h3>G-Sides</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/3.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/9.jpg" alt="">
-							<h3>Gregory Dixon</h3>
-							<h5>Drummer</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive" src="images/backgrounds/cov6.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/8.jpg" alt="">
+								<h3>D-Sides</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/3.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/10.jpg" alt="">
-							<h3>Gregory Dixon</h3>
-							<h5>Drummer</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive" src="images/backgrounds/cov7.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/9.jpg" alt="">
+								<h3>Gorillaz</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
 				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive"  src="images/backgrounds/1.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/11.jpg" alt="">
-							<h3>Matthew Franklin</h3>
-							<h5>Guitarist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
+					<a href="album.php">
+						<div class="artist bordered hover-effect">
+							<div class="overlay"></div>
+							<img class="img-responsive"  src="images/backgrounds/cov8.jpg" alt="">
+							<div class="info-block">
+								<img  class="img-responsive" src="images/members/11.jpg" alt="">
+								<h3>Laika Come Home</h3>
+								<div class="show-on-hover">
+									<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi</p>
+								</div>
 							</div>
 						</div>
-					</div>
+					</a>
 				</div>
-				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/2.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/12.jpg" alt="">
-							<h3>Catherine Davis</h3>
-							<h5>Vocalist</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://twitter.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://tumblr.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-4">
-					<div class="artist bordered hover-effect">
-						<div class="overlay"></div>
-						<img class="img-responsive" src="images/backgrounds/3.jpg" alt="">
-						<div class="info-block">
-							<img  class="img-responsive" src="images/members/13.jpg" alt="">
-							<h3>Gregory Dixon</h3>
-							<h5>Drummer</h5>
-							<div class="show-on-hover">
-								<p>Sed est risus, interdum id posuere et, fringilla id ipsum. Cras lacinia ipsum nisi, at sagittis leo sodales eget amet vitea</p>
-								<ul class="social-networks no-bg">
-									<li><a class="fa fa-facbook" href="http://facebook.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://youtube.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://spotify.com"></a></li>
-									<li><a class="fa fa-facbook" href="http://soundcloud.com"></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="btn-wrapper pdt-70">
-				<a href="band.html" class="btn big first"><i class="fa fa-user"></i>All Members</a>
-				<a href="band.html" class="btn big dark"><i class="fa fa-user"></i>New Members</a>
 			</div>
 		</div>
 
+		
+
 		<!-- Events -->
-		<div class="events-home-wrapper">
+		<div id ="tour" class="events-home-wrapper">
 			<div class="overlay-section">
 				<div class="container section">
 					<div class="section-title pdb-30">
 						<h2>Upcoming Events</h2>
 						<div class="sep"></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
+						<p>Don't miss anything about our international tour</p>
 					</div>
 					<div class="events">
 						<div class="next-event-countdown">
-							<ul class="events-home-countdown start_countdown clearfix" data-date="31 october 2016 12:00:00">
-							    <li><span class="days">00</span><span class="timeRefDays">days</span></li>
+							<ul class="events-home-countdown start_countdown clearfix" data-date="31 october 2018 12:00:00">
+							    <li><span class="days">00</span><span class="timeRefDays"> days</span></li>
 							    <li><span class="hours">00</span><span class="timeRefHours">hours</span></li>
 							    <li><span class="minutes">00</span><span class="timeRefMinutes">mins</span></li>
 							    <li><span class="seconds">00</span><span class="timeRefSeconds">secs</span></li>
@@ -600,7 +346,7 @@
 						<div class="event clearfix">
 							<div class="date">
 								<h2>31</h2>
-								<p>Oct, 2016</p>
+								<p>Oct, 2018</p>
 							</div>
 							<h4 class="title">Nocturna Show in Bucharest</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Sala Polivalenta, Bucharest</h5>
@@ -611,10 +357,10 @@
 						<div class="event clearfix even">
 							<div class="date">
 								<h2>22</h2>
-								<p>Nov, 2016</p>
+								<p>Nov, 2020</p>
 							</div>
 							<h4 class="title">Titan Slayer Live in Underground Pub</h4>
-							<h5 class="location"><i class="fa fa-map-marker"></i>Mihai Viteazul, no. 5, Buzau</h5>
+							<h5 class="location"><i class="fa fa-map-marker"></i>Stadium, France</h5>
 							<div class="btn-wrapper">
 								<a href="#" class="btn">Buy Tickets</a>
 							</div>
@@ -622,10 +368,10 @@
 						<div class="event clearfix">
 							<div class="date">
 								<h2>29</h2>
-								<p>Nov, 2016</p>
+								<p>Nov, 2022</p>
 							</div>
 							<h4 class="title">Clitgore at Rockstad Extreme Fest</h4>
-							<h5 class="location"><i class="fa fa-map-marker"></i>Rasnov, Brasov, Romania</h5>
+							<h5 class="location"><i class="fa fa-map-marker"></i>Dt, Germany</h5>
 							<div class="btn-wrapper">
 								<a href="#" class="btn">Buy Tickets</a>
 							</div>
@@ -633,10 +379,10 @@
 						<div class="event clearfix even">
 							<div class="date">
 								<h2>16</h2>
-								<p>Dec, 2016</p>
+								<p>Dec, 2024</p>
 							</div>
 							<h4 class="title">K Project First Public Show in Altlantis</h4>
-							<h5 class="location"><i class="fa fa-map-marker"></i>Tineretului Park, Buzau</h5>
+							<h5 class="location"><i class="fa fa-map-marker"></i>UK, London</h5>
 							<div class="btn-wrapper">
 								<a href="#" class="btn">Buy Tickets</a>
 							</div>
@@ -644,7 +390,7 @@
 						<div class="event clearfix">
 							<div class="date">
 								<h2>31</h2>
-								<p>Dec, 2016</p>
+								<p>Dec, 2026</p>
 							</div>
 							<h4 class="title">Titan Slayer New Years Day!</h4>
 							<h5 class="location"><i class="fa fa-map-marker"></i>Location no.45, Romania</h5>
@@ -661,16 +407,35 @@
 			</div>
 		</div>
 
-		
+		<div id="videos" class="videos section container">
+			<div class="section-title pdb-60">
+				<h2>Videos</h2>
+			</div>
+			<div class="row artists">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/HyHNuVaZJ-k" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/1V_xRb0x9aw" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/WXR-bCF5dbM" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/cLnkQAeMbIM" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/nhPaWIeULKk" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/04mfKJWDSzI" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/hji4gBuOvIQ" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/uAOR6ib95kQ" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/UclCCFNG9q4" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/Tq7Ovshz1UI" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/14LOV9m0jvk" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/i4WPbqsIi0k" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/04mfKJWDSzI" frameborder="0" allowfullscreen></iframe>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/PiNdcBg3xC8" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
 
 		<!-- Blog -->
-		<div class="blog-home-wrapper">
+		<div id="blog" class="blog-home-wrapper">
 			<div class="overlay-section">
 				<div class="container section ">
 					<div class="section-title pdb-30">
 						<h2><?php echo $affiche['dernieresn'][$langue]; ?></h2>
 						<div class="sep"></div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
 					</div>
 					<div class="row blog-posts">
 						<?php
@@ -681,13 +446,14 @@
 									<div class="bordered img-wrapper">
 										<div class="overlay"></div>
 										<a href="<?php echo $value['lien']; ?>">
-											<img class="img-responsive" src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>">
-										</a>
+										<img class="img-responsive" src="images/articles/1.jpg">
+										<!--	<img class="img-responsive" src="/img/<?php echo $value['img'];?>" alt="image-<?php echo $value['titre']; ?>">
+										--></a>
 									</div>
-									<a href="blog-single.html"><h3><?php echo $value['titre']; ?></h3></a>
+									<a href="article.html"><h3><?php echo $value['titre']; ?></h3></a>
 									<h5><i class="fa fa-clock-o"></i><?php echo $value['date_insert']; ?></h5>
 									<p><?php echo $value['article']; ?></p>
-									<a href="blog-single.html" class="btn">Read More</a>
+									<a href="article.html" class="btn">Read More</a>
 								</div>
 							</div>
 						<?php
@@ -695,34 +461,33 @@
 						 ?>
 					</div>
 					<div class="btn-wrapper pdt-70">
-						<a href="blog.html" class="btn big"><i class="fa fa-user"></i>See All News</a>
+						<a href="#" class="btn big"><i class="fa fa-user"></i>See All News</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		
 		<!-- Recent Prodcuts -->
-		<div class="recent-products-home-wrapper ">
+		<div id="store" class="recent-products-home-wrapper ">
 			<div class="container section">
 				<div class="section-title pdb-30">
-					<h2>Recent Products</h2>
+					<h2>Merch</h2>
 					<div class="sep"></div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas enim diam, placerat sed ligula ia maximus enim. Nulla tincidunt turpis enim, eu commodo elit blandit ut</p>
 				</div>
 				<div class="row recent-products">
 					<div class="col-md-3 col-sm-6">
 						<div class="product">
 							<div class="bordered product-image">
-								<img class="img-responsive" src="images/1.jpg" alt="">
+								<img class="img-responsive" src="images/products/1.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
 										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Neo T-Shirt</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">tshirt plastic winter</h5></a>
 							<div class="meta">
-								<h6 class="product-cat">T-Shirts</h6>
+								<h6 class="product-cat">T-shirt</h6>
 								<ul class="rating">
 									<li><i class="fa fa-star"></i></li>
 									<li><i class="fa fa-star"></i></li>
@@ -730,23 +495,23 @@
 									<li><i class="fa fa-star"></i></li>
 									<li><i class="fa fa-star"></i></li>
 								</ul>
-								<h5 class="price">$25.00</h5>
+								<h5 class="price">$20.00</h5>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6">
 						<div class="product">
 							<div class="bordered product-image">
-								<img class="img-responsive" src="images/1.jpg" alt="">
+								<img class="img-responsive" src="images/products/2.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
 										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Gorogot - MTBFest</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">hoodie plastic winter</h5></a>
 							<div class="meta">
-								<h6 class="product-cat">Tickets</h6>
+								<h6 class="product-cat">Sweater</h6>
 								<ul class="rating">
 									<li><i class="fa fa-star"></i></li>
 									<li><i class="fa fa-star"></i></li>
@@ -761,14 +526,38 @@
 					<div class="col-md-3 col-sm-6">
 						<div class="product">
 							<div class="bordered product-image">
-								<img class="img-responsive" src="images/1.jpg" alt="">
+								<img class="img-responsive" src="images/products/3.jpg" alt="">
 								<div class="overlay">
 									<div class="info-block">
 										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
 									</div>
 								</div>
 							</div>
-							<a href="shop-single.html"><h5 class="product-title">Lacuna Coil - Comalies</h5></a>
+							<a href="shop-single.html"><h5 class="product-title">Sweat shirt plastic winter</h5></a>
+							<div class="meta">
+								<h6 class="product-cat">Sweter</h6>
+								<ul class="rating">
+									<li><i class="fa fa-star"></i></li>
+									<li><i class="fa fa-star"></i></li>
+									<li><i class="fa fa-star"></i></li>
+									<li><i class="fa fa-star"></i></li>
+									<li><i class="fa fa-star empty"></i></li>
+								</ul>
+								<h5 class="price">$35.00</h5>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<div class="product">
+							<div class="bordered product-image">
+								<img class="img-responsive" src="images/products/4.jpg" alt="">
+								<div class="overlay">
+									<div class="info-block">
+										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
+									</div>
+								</div>
+							</div>
+							<a href="shop-single.html"><h5 class="product-title">Long leaves woman shirt</h5></a>
 							<div class="meta">
 								<h6 class="product-cat">Albums</h6>
 								<ul class="rating">
@@ -778,31 +567,7 @@
 									<li><i class="fa fa-star"></i></li>
 									<li><i class="fa fa-star empty"></i></li>
 								</ul>
-								<h5 class="price">$25.00</h5>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-6">
-						<div class="product">
-							<div class="bordered product-image">
-								<img class="img-responsive" src="images/1.jpg" alt="">
-								<div class="overlay">
-									<div class="info-block">
-										<a href="#" class="button"><i class="fa fa-shopping-cart"></i>Add To cart</a>
-									</div>
-								</div>
-							</div>
-							<a href="shop-single.html"><h5 class="product-title">Titan Slayer - Sisters of Furry</h5></a>
-							<div class="meta">
-								<h6 class="product-cat">Albums</h6>
-								<ul class="rating">
-									<li><i class="fa fa-star"></i></li>
-									<li><i class="fa fa-star"></i></li>
-									<li><i class="fa fa-star"></i></li>
-									<li><i class="fa fa-star"></i></li>
-									<li><i class="fa fa-star empty"></i></li>
-								</ul>
-								<h5 class="price">$25.00</h5>
+								<h5 class="price">$40.00</h5>
 							</div>
 						</div>
 					</div>
@@ -811,13 +576,13 @@
 		</div>
 		
 		<!-- Contact -->
-		<div class="contact-home-wrapper">
+		<div id="contact" class="contact-home-wrapper">
 			<div class="overlay-section">
 				<div class="container section">
 					<div class="section-title pdb-60">
 						<h2><?php echo $affiche['contact'][$langue]; ?></h2>
 						<div class="sep"></div>
-						<p><?php echo $affiche['text_conta'][$langue]; ?></p>
+						<!--<p><?php echo $affiche['text_conta'][$langue]; ?></p>-->
 					</div>
 					<div class="row contact-from">
 						<form class="col-xs-12 general-form clearfix" action="contact.php" method="post" name="contact" id="contact-form">
@@ -852,7 +617,7 @@
 				<div class="row">
 					<div class="title-block col-xs-12 col-sm-6">
 						<i class="fa fa-envelope"></i>
-						<h2 class="newsletter-title">NEWSLETTER</h2>
+						<h2 class="newsletter-title">Get updates</h2>
 					</div>
 					<div class="form-block col-xs-12 col-sm-6">
 						<div id="mc_embed_signup" >
@@ -882,32 +647,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="widget col-sm-4 about-widget ">
-					<h4 class="widget-title"><?php echo $affiche['apropos'][$langue]; ?></h4>
 					<div class="widget-content">
-						<p><?php echo $affiche['txtapropos'][$langue]; ?></p>
 						<ul class="social-networks bg clearfix">
 							<li><a class="fa fa-facebook" href="http://facebook.com"></a></li>
-							<li><a class="fa fa-facebook" href="http://plus.google.com"></a></li>
 							<li><a class="fa fa-facebook" href="http://twitter.com"></a></li>
-							<li><a class="fa fa-facebook" href="http://spotify.com"></a></li>
-							<li><a class="fa fa-facebook" href="http://soundcloud.com"></a></li>
 							<li><a class="fa fa-facebook" href="http://youtube.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://tumblr.com"></a></li>
+							<li><a class="fa fa-facebook" href="http://instagram.com"></a></li>
 						</ul>
 					</div>
-				</div>
-				<div class="widget col-sm-4 twitter-widget">
-					<h4 class="widget-title">Twitter</h4>
-					<div id="twitter-feed"></div>
-				</div>	
-				<div class="widget col-sm-4 instagram-widget">
-					<h4 class="widget-title">Instagram</h4>
-					<ul id="footer-insta" class="clearfix"></ul>
 				</div>
 			</div>
 		</div>
 		<div class="footer-bar">
 			<div class="container relative-pos z-index">
-				<p class="col-sm-6">Copyright 2016 <a href="#">FutureThemes</a> | Allrights Reserved</p>
+				<p class="col-sm-6">Copyright 2016 <a href="#">Noodles</a> | Allrights Reserved</p>
 			</div>
 		</div>
 	</footer>

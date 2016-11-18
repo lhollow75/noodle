@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MusicBase HTML</title>
+	<title>Gorillaz</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
 	<!-- Google Fonts -->
@@ -19,6 +19,30 @@
 	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php
+	require_once ('connexionbdd.php'); 
+	include 'fonctionsbdd.php';
+	include 'mail.php';
+	session_start();
+	if (!empty($_POST)){
+		$_SESSION['lang']=$_POST['l'];
+	} else {
+		$_SESSION['lang']='fr';
+	}
+	if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+		$langue='en';
+	} else {
+		$langue='fr';
+	}
+	$date=recupEvent($mysql);
+	$affiche=recupTexte($mysql, $langue);
+	$article = recupArticles($mysql, $langue);
+	?>
+	<script type="text/javascript">
+		function open_infos(){
+			window.open('envoiok.php?nom:<?php echo $_POST["name"];?>','messagerecu','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');
+		}
+	</script>
 </head>
 <body>
 	
@@ -31,22 +55,39 @@
 		<div class="container nav-wrapper">
 			<!-- Logo -->
 			<div class="site-branding">
-				<a href="index.html">
-					<span class="first-word colored">Music</span>
-					<span class="second-word">Base</span>
-				</a>
+				<div class="site-branding">
+				<?php 
+					if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+						$langue='en';
+						?>
+						<form action="" method="post" >	
+							<input class="btn " type="hidden" name="l" value="fr" />
+							<input class="btn " type="submit" id="langue_fr" value="Francais">
+						</form>
+						<?php
+					} else {
+					$langue='fr';
+					?>
+					<form action="" method="post" style="display:none;">	
+						<input class="btn " type="hidden" name="l" value="en" />
+						<input class="btn " type="submit" id="langue_en" value="English">
+					</form>	
+					<?php 
+					}
+					?>
+				</div>
 			</div>
 			<!-- Main Mneu -->
 			<nav id="site-navigation" class="site-navigation">
 				<ul id="main-menu">
 					<li class="active">
-						<a href="index.php#music">Music</a>
+						<a href="#music">Music</a>
 					</li>
 					<li class="">
 						<a href="index.php#videos">Vidéos</a>
 					</li>
 					<li class="logo_gorillaz">
-						<a href="index.html"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
+						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
 					</li>
 					<li class="">
 						<a href="index.php#tour">Tour</a>
@@ -92,128 +133,87 @@
 		</div>
 	</header>
 
-	<!-- Site Content -->
 	<div class="site-content">
-		
-		<!-- Page Header -->
-		<div class="page-header">
-			<div class="overlay-section">
-				<div class="container page-header-section">
-					<h1 class="page-title">Blog Single</h1>
+		<!-- Album Single -->
+		<div class="album-single-page-wrapper two">
+			<div class="container section">
+				<div class="row album-single">
+					<h2 class="album-name col-xs-12">Plastic Winter</h2>
+					<div class="col-md-4 col-sm-5 clearfix">
+						<div class="bordered">
+							<img src="images/2.jpg" alt="" class="img-responsive">
+						</div>
+						<div class="description">
+							<h4 class="title">Album Info</h4>
+							<ul class="meta">
+								<li class="clearfix"><span>Artist:</span><span>Gorillaz</span></li>
+								<li class="clearfix"><span>Release Date:</span><span>11 December, 2016</span></li>
+								<li class="clearfix"><span>Genre:</span><span>rock, hip-hop alternatif, electropop, trip hop</span></li>
+								
+							</ul>
+							<div class="buy clearfix">
+								<h4 class="price">Price: $32.00</h4>
+								<a href="#" class="btn"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-7">
+						<div class="default-player">
+							<div id="jquery_jplayer_2" class="jp-jplayer"></div>
+							<div id="jp_container_2" class="jp-audio" role="application" aria-label="media player">
+								<div class="jp-type-playlist">
+									<div class="jp-gui jp-interface_2">
+										<div class="player-bar">
+											<div class="jp-controls">
+												<button class="jp-previous" tabindex='0'><i class="fa fa-backward"></i></button>
+												<button class="jp-play" tabindex='0'><i class="fa fa-play"></i></button>
+												<button class="jp-next" tabindex="0"><i class="fa fa-forward"></i></button>
+												<button class="jp-mute" tabindex="0"><i class="fa fa-volume-up"></i></button>
+											</div>
+											<div id="nowPlaying_2" class="nowPlaying">
+												<span class="artist-name"></span>
+												<span class="track-name"></span>
+											</div>
+											<div class="jp-progress">
+												<div class="jp-seek-bar">
+													<div class="jp-play-bar"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="main-player-playlist-2" class="jp-playlist">
+										<ul>
+											<li class="clearfix">&nbsp;</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="description">
+							<h4 class="title">Description</h4>
+							<p>Le titre de l'album est confirmé le 27 novembre 2009 par le chanteur-compositeur et guitariste Damon Albarn au cours d'une interview avec The Guardian. Albarn a aussi révélé que les artistes Snoop Dogg, Lou Reed, Mos Def, Bobby Womack et De La Soul sont présents sur l'album. L'album est sorti en Europe le 8 mars 2010.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row similar-albums">
+					<h3 class="col-sm-12 title">Similar Albums</h3>
+					<div class="col-sm-4">
+						<a href="album.php">
+							<div class="similar-album bordered hover-effect">
+								<div class="info-block">
+									<h4>2010</h4>
+									<h5>Plastic Beach</h5>
+								</div>
+								<img src="images/albums/cov2.jpg" alt="" class="img-responsive">
+							</div>
+						</a>
+					</div>
+					
 				</div>
 			</div>
 		</div>
-		
-		<!-- Blog Page -->
-		<div class="blog-page-wrapper container section">
-			<div class="row">
-				<div class="col-md-10 col-md-offset-1 blog-posts">
-					<article class="blog-post">
-						<header class="post-header">
-							<h2 class="title">A concert that we will never forget</h2>
-							<div class="meta">
-								<p class="user"><span>by:</span> Future Themes</p>
-								<p class="line">/</p>
-								<p class="date"><span>on:</span> Thuesday 21, Jully 2016</p>
-							</div>
-							<img src="assets/img/blog/single-img.jpg" alt="" class="img-responsive bordered">
-						</header>
-						<p>In at pharetra augue. Integer accumsan mattis sollicitudin. Nulla sollicitudin consequat elementum in tincidunt ero ue convallis. Fusce nec fringilla felis. Quisque phare tra vel nibh necnterdum et malesuada ames acimis in faucibus. in ex  faucibus porttitor. Nullam aliquam condimentum Aenean placerat condiment m mi a maximus. Phasellus odio lor omnis perspiciatis ad, molestiae beatae placeat quibusdam sit corporis impedit harum molestias qui laborum as  ratione itaque nesciunt dignissimos asperiores veniam! Rem ea tenetur repellat animi totam</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis possimus pariatur necessitatibus cum vitae, dolores, nisi temporibus excepturi fuga unde, eum illo quam nam ad debitis. Dignissimos quae quisquam exercitationem nisi cum earum quia aperiam, excepturi error. Aliquid officiis eveniet, obcaecati blanditiis accusamus excepturi error?</p>
-						<h4>Lorem Ipsum The Cite</h4>
-						<blockquote class="clearfix">
-							<i class="fa fa-quote-left"></i>
-							<div class="content">
-								<p>Humility and the willingness to learn in order to go beyond our current limitations are at the heart and soul of innovation.<p>
-								<h6>Future Themes</h6>
-							</div>
-						</blockquote>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet, minima, velit ex, illum tenetur facilis deleniti enim in alias consectetur. Placeat cupiditate commodi eum, dolorum quam suscipit maxime sint sunt optio nobis veritatis, natus officiis itaque sed ab eveniet minima magnam cumque! Quisquam, quas id excepturi necessitatibus vitae sint.</p>
-						<p>In at pharetra augue. Integer accumsan mattis sollicitudin. Nulla sollicitudin consequat elementum in tincidunt eronon tellus tristique convallis. Fusce nec fringilla felis. Quisque phare tra vel nibh necnterdum et malesuada fames acimis in faucibus. Fusce ut augue in ex  faucibus porttitor. Nullam aliquam condimentum Aenean placerat condimentm mi a maximus. Phasellus odio nunc, lacinia quis fringilla viverra, placerat imperdiet orci. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo pariatur eligendi non culpa, consequuntur itaque harum, assumenda, sapiente distinctio tempora iste? Facere optio temporibus. </p>
-						<ul class="tags clearfix">
-							<li class="tag"><a href="#"><span>Events</span></a></li>
-							<li class="tag"><a href="#"><span>Lipsum</span></a></li>
-							<li class="tag"><a href="#"><span>Pellentesque</span></a></li>
-							<li class="tag"><a href="#"><span>Metal</span></a></li>
-							<li class="tag"><a href="#"><span>Nightlife</span></a></li>
-							<li class="tag"><a href="#"><span>Dubstep</span></a></li>
-							<li class="tag"><a href="#"><span>Tag Eleven</span></a></li>
-						</ul>
-					</article>
-					<div class="author">
-						<img src="assets/img/blog/auth.jpg" alt="" class="bordered">
-						<h3>Future Themes</h3>
-						<p>Quisque phare tra vel nibh necnterdum et malesuada fames acimis in faucibus ue in ex  faucibus porttitor. Nullam aliquam condimentum Aenean placerat cond. Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-						<ul class="social-networks no-bg clearfix">
-							<li><a class="fa" href="http://facebook.com"></a></li>
-							<li><a class="fa" href="http://plus.google.com"></a></li>
-							<li><a class="fa" href="http://twitter.com"></a></li>
-							<li><a class="fa" href="http://spotify.com"></a></li>
-							<li><a class="fa" href="http://soundcloud.com"></a></li>
-							<li><a class="fa" href="http://youtube.com"></a></li>
-						</ul>
-					</div>
-					<div class="comments">
-						<h4 class="title">There are 3 comments on this post</h4>
-						<ul class="comments-list">
-							<li class="comment ">
-								<div class="comment-author relative-pos clearfix">
-									<img src="assets/img/blog/comment-1.jpg" alt="" class="bordered">
-									<h5 class="name">Rebecca Pearson</h5>
-									<h6 class="meta">Thuesday 21, Jully 2016</h6>
-								</div>
-								<p>Praesent eu ante sed libero viverra as sed faucius massa. Vestibulum at mollis lorem, et lobortis mauris. Morbi neque orci, lacinia vitae suscipit eu, viverra ac justo. Integer tristique</p>
-								<a href="#" class="btn tiny">Replay</a>
-							</li>
-							<li class="comment sub-comment">
-								<div class="comment-author relative-pos clearfix">
-									<img src="assets/img/blog/comment-2.jpg" alt="" class="bordered">
-									<h5 class="name">Future Themes</h5>
-									<h6 class="meta">Thuesday 22, Jully 2016</h6>
-								</div>
-								<p>Praesent eu ante sed libero viverra as sed faucius massa. Vestibulum at mollis lorem, et lobortis mauris. </p>
-								<a href="#" class="btn tiny">Replay</a>
-							</li>
-							<li class="comment">
-								<div class="comment-author relative-pos clearfix">
-									<img src="assets/img/blog/comment-1.jpg" alt="" class="bordered">
-									<h5 class="name">Rebecca Pearson</h5>
-									<h6 class="meta">Thuesday 21, Jully 2016</h6>
-								</div>
-								<p>Praesent eu ante sed libero viverra as sed faucius massa. Vestibulum at mollis lorem, et lobortis mauris. Morbi neque orci, lacinia vitae suscipit eu, viverra ac justo. Integer tristique</p>
-								<a href="#" class="btn tiny">Replay</a>
-							</li>
-						</ul>
-					</div>
-					<div class="comment-form">
-						<h4 class="title">Leave a comment</h4>
-						<form class="general-form clearfix" action="#" method="post" name="contact" id="comment-form">
-							<div class="field-group row">
-								<div class="field col-sm-4">
-									<h5>Your Name <span>*</span></h5>
-									<input name="name" type="text" class="required" title="Please type your name." placeholder="Name...">
-								</div>
-								<div class="field col-sm-4">
-									<h5>Your Email <span>*</span></h5>
-									<input name="email" type="text" class="required" title="Please type your email." placeholder="Email...">
-								</div>
-								<div class="field col-sm-4">
-									<h5>Your Site</h5>
-									<input name="website" type="text" placeholder="website">
-								</div>
-							</div>
-							<div class="field">
-								<h5>Your Comment <span>*</span></h5>
-								<textarea name="message" cols="15" rows="5" class="required" placeholder="Comment..." title="Please type a comment"></textarea>
-							</div>
-							<button class="btn big"><i class="fa fa-paper-plane"></i>Add Comment</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		<!-- Newsletter -->
+
+		<!-- Newsletter  -->
 		<div class="newsletter-wrapper">
 			<div class="container">
 				<div class="row">
@@ -278,8 +278,7 @@
 			</div>
 		</div>
 	</footer>
-	
-	
+
 	<!-- Go to top button -->
 	<div id="back-to-top" class="fa fa-arrow-circle-up"></div>
 	<div id="pause-player" class="fa fa-play-circle"></div>
@@ -310,5 +309,124 @@
 	<script type="text/javascript" src="js/revolution.extension.actions.min.js"></script>
 	<!-- END RS5.0 Core JS Files -->
 	<script type="text/javascript" src="js/custom_js.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function($) {
+    	"use strict";
+		// Second Player
+		var changeTrack2 = function changeTrack(event) {
+	        var current = myPlaylist_2.current,
+	        	playlist = myPlaylist_2.playlist;       
+	        $.each(playlist, function (index, obj) {
+	            if (index == current) {
+	                $("#nowPlaying_2 .artist-name").html(obj.artist);
+	                $("#nowPlaying_2 .track-name").html(obj.title);
+	            }
+	        });
+	    };
+		
+		var myPlaylist_2 = new jPlayerPlaylist({
+			jPlayer: "#jquery_jplayer_2",
+			cssSelectorAncestor: "#jp_container_2",
+		}, [
+			// This playlist doesn't require poster image
+			{
+				artist: "Gorillaz",
+				title:"Orchestral Intro",
+				mp3:"audios/Track-3.mp3",
+				free: true
+			},
+			{	
+				artist: "Gorillaz, Snoop Dogg",
+				title:"Welcome to the World of the Plastic Beach ",
+				mp3:"audios/Track-1.mp3"
+			},
+			{
+				artist: "Gorillaz, Bashy, Kano",
+				title:"White Flag ",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Rhinestone Eyes",
+				mp3:"audios/Track-4.mp3"
+			},
+			{
+				artist: "Gorillaz, Mos Def",
+				title:"Stylo",
+				mp3:"audios/Track-5.mp3"
+			},
+			{
+				artist: "Gorillaz, De La Soul, Gruff Rhys",
+				title:"Superfast Jellyfish ",
+				mp3:"audios/Track-3.mp3",
+			},
+			{
+				artist: "Gorillaz, Nagano",
+				title:"Empire Ants",
+				mp3:"audios/Track-1.mp3"
+			},
+			{
+				artist: "Gorillaz, Smith",
+				title:"Glitter Freeze",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Reed",
+				title:"Some Kind of Nature",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"On Melancholy Hill",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Broken",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Mos Def",
+				title:"Sweepstakes",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Plastic Beach",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Nagano",
+				title:"To Binge",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Cloud of Unknowing",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Pirate Jet",
+				mp3:"audios/Track-2.mp3"
+			}
+		],{
+			playlistOptions: {
+			    enableRemoveControls: true
+			},
+			swfPath: "assets/jplayer/jplayer",
+			supplied: "oga, mp3",
+			wmode: "window",
+			useStateClassSkin: true,
+			autoBlur: false,
+			smoothPlayBar: false,
+			keyEnabled: true,
+            ready: changeTrack2,
+		    play: changeTrack2,
+		});
+
+	});//end .ready
+	</script>
+
 </body>
 </html>

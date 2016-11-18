@@ -108,6 +108,13 @@ h6 {
   color: #4c4e58;
   font-weight: 400;
 }
+.artist h3{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+} 
 h1 {
   font-size: 35px;
   line-height: 35px;
@@ -255,7 +262,7 @@ p {
   right: 15px;
   width: 40px;
   height: 30px;
-  background: rgba(252, 15, 113, 0.8);
+  background: #b0c3db;
   color: #ffffff;
   font-size: 20px;
   line-height: 30px;
@@ -640,7 +647,7 @@ p {
   display: block;
   float: left;
   width: 15%;
-  padding: 15px 0 0;
+  padding: 20px 0 0;
   -webkit-backface-visibility: hidden;
   /* Chrome, Safari, Opera */
   backface-visibility: hidden;
@@ -668,18 +675,21 @@ p {
   display: block;
   width: 100%;
   text-align: center;
-  padding-top: 28px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #site-header #site-navigation #main-menu > li {
   display: inline-block;
   position: relative;
   padding: 0 10px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
-#site-header #site-navigation #main-menu > li.active > a,
-#site-header #site-navigation #main-menu > li:hover > a {
+#site-header #site-navigation #main-menu > li.active > a{
   background: #b0c3db;
   color: #fff;
+}
+li.logo_gorillaz a:hover, li.logo_gorillaz:hover ,#site-header #site-navigation #main-menu > li.logo_gorillaz:hover{
+    background: transparent!important;
 }
 #site-header #site-navigation #main-menu > li > a {
   display: block;
@@ -687,7 +697,10 @@ p {
   font-size: 14px;
   line-height: 24px;
   padding: 0 10px;
-  color: #7c5421;
+  color: #000;
+}
+div#videos {
+    text-align: center;
 }
 .logo_gorillaz img{
   width: auto;
@@ -751,6 +764,9 @@ p {
   right: 15px;
   padding-top: 30px;
   width: 70px;
+}
+#search-toggle, #mini-cart-toggle{
+  color: #000;
 }
 #site-header .extra-nav button ,#site-header .extra-nav-left button {
   display: block;
@@ -882,20 +898,20 @@ p {
   top: 50px;
 }
 #site-header.scrolling .site-branding {
-  padding-top: 5px;
+
 }
 #site-header.scrolling .site-branding a span {
   font-size: 20px;
   line-height: 20px;
 }
 #site-header.scrolling #site-navigation #main-menu {
-  padding-top: 13px;
+
 }
 #site-header.scrolling #site-navigation #main-menu > li > .submenu {
-  padding-top: 13px;
+
 }
 #site-header.scrolling .extra-nav {
-  padding-top: 13px;
+
 }
 #site-header.scrolling .extra-nav #mini-cart-widget {
   top: -450px;
@@ -1738,7 +1754,7 @@ p {
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #e6e6e6;
+  color: #b3b3b3;
 }
 .album-single-page-wrapper .album-single {
   margin-bottom: 35px;
@@ -1746,7 +1762,8 @@ p {
 .album-single-page-wrapper .album-single .album-name {
   text-transform: uppercase;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
+  color: #fff;
 }
 .album-single-page-wrapper .album-single .description {
   margin-top: 40px;
@@ -1765,7 +1782,7 @@ p {
   padding-right: 15px;
 }
 .album-single-page-wrapper .album-single .description ul.meta li span:last-child {
-  color: #e6e6e6;
+  color: #000;
   font-size: 18px;
 }
 .album-single-page-wrapper .album-single .description .buy {
@@ -1789,8 +1806,8 @@ p {
     margin-bottom: 40px;
   }
 }
-.album-single-page-wrapper .similar-albums {
-  padding-top: 60px;
+.album-single-page-wrapper .section {
+    padding-top: 60px;
 }
 .album-single-page-wrapper .similar-albums .title {
   padding-top: 30px;
@@ -1842,7 +1859,7 @@ p {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   max-width: 140px;
-  margin: 0 auto 35px;
+  margin: 0 auto 10px;
 }
 .artist .info-block h3 {
   text-transform: uppercase;
@@ -1898,12 +1915,26 @@ p {
 @media screen and (max-width: 991px) {
   .artist {
     margin: 0 auto 30px;
+    height: 293px;
+    overflow: hidden;
   }
 }
 @media screen and (max-width: 768px) {
   .artist {
     max-width: 420px;
+    height: 293px;
+    overflow: hidden;
   }
+
+}
+.artist> img{
+  height: 293px;
+}
+.artists .col-sm-4 {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 /*--------------------------------------------------------------
 6.1 - Artist Single
@@ -4217,4 +4248,24 @@ p {
 .social-networks li a[href*="tumblr."]:before {
   content: '\f173';
 }
-
+.blog-post-home {
+    padding-top: 30px;
+    overflow: hidden;
+}
+.blog-post-home p {
+    max-height: 100px;
+    overflow: hidden;
+}
+.tparrows{
+  display: none!important;
+}
+.album-single-page-wrapper {
+    background-image: url(../images/flou.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.album-single-page-wrapper.two {
+    background-image: url(../images/flou1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

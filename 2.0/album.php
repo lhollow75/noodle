@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>MusicBase HTML</title>
+	<title>Gorillaz</title>
 	<!-- Favicon -->
 	<link rel="shortcut icon" type="image/ico" href="assets/img/favicon.ico" />
 	<!-- Google Fonts -->
@@ -19,6 +19,30 @@
 	<link rel="stylesheet" type="text/css" href="css/css/navigation.css">
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<?php
+	require_once ('connexionbdd.php'); 
+	include 'fonctionsbdd.php';
+	include 'mail.php';
+	session_start();
+	if (!empty($_POST)){
+		$_SESSION['lang']=$_POST['l'];
+	} else {
+		$_SESSION['lang']='fr';
+	}
+	if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+		$langue='en';
+	} else {
+		$langue='fr';
+	}
+	$date=recupEvent($mysql);
+	$affiche=recupTexte($mysql, $langue);
+	$article = recupArticles($mysql, $langue);
+	?>
+	<script type="text/javascript">
+		function open_infos(){
+			window.open('envoiok.php?nom:<?php echo $_POST["name"];?>','messagerecu','menubar=no, scrollbars=no, top=100, left=100, width=300, height=200');
+		}
+	</script>
 </head>
 <body>
 	
@@ -31,34 +55,51 @@
 		<div class="container nav-wrapper">
 			<!-- Logo -->
 			<div class="site-branding">
-				<a href="index.html">
-					<span class="first-word colored">Music</span>
-					<span class="second-word">Base</span>
-				</a>
+				<div class="site-branding">
+				<?php 
+					if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
+						$langue='en';
+						?>
+						<form action="" method="post" >	
+							<input class="btn " type="hidden" name="l" value="fr" />
+							<input class="btn " type="submit" id="langue_fr" value="Francais">
+						</form>
+						<?php
+					} else {
+					$langue='fr';
+					?>
+					<form action="" method="post" style="display:none;">	
+						<input class="btn " type="hidden" name="l" value="en" />
+						<input class="btn " type="submit" id="langue_en" value="English">
+					</form>	
+					<?php 
+					}
+					?>
+				</div>
 			</div>
 			<!-- Main Mneu -->
 			<nav id="site-navigation" class="site-navigation">
 				<ul id="main-menu">
 					<li class="active">
-						<a href="#music">Music</a>
+						<a href="index.php#music">Music</a>
 					</li>
 					<li class="">
-						<a href="#videos">Vidéos</a>
+						<a href="index.php#videos">Vidéos</a>
 					</li>
 					<li class="logo_gorillaz">
-						<a href="#index.html"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
+						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
 					</li>
 					<li class="">
-						<a href="#tour">Tour</a>
+						<a href="index.php#tour">Tour</a>
 					</li>
 					<li class="">
-						<a href="#blog">Blog</a>
+						<a href="index.php#blog">Blog</a>
 					</li>
 					<li class="">
-						<a href="#store">Store</a>
+						<a href="index.php#store">Store</a>
 					</li>
 					<li class="">
-						<a href="#contact">Contact</a>
+						<a href="index.php#contact">Contact</a>
 					</li>
 				</ul>
 			</nav>
@@ -93,22 +134,11 @@
 	</header>
 
 	<div class="site-content">
-		
-		<!-- Page Header -->
-		<div class="page-header">
-			<div class="overlay-section">
-				<div class="container page-header-section">
-					<h1 class="page-title">Album Single</h1>
-				</div>
-			</div>
-		</div>
-
-
 		<!-- Album Single -->
 		<div class="album-single-page-wrapper">
 			<div class="container section">
 				<div class="row album-single">
-					<h2 class="album-name col-xs-12">Lacuna Coil - Comalies</h2>
+					<h2 class="album-name col-xs-12">Plastic Beach</h2>
 					<div class="col-md-4 col-sm-5 clearfix">
 						<div class="bordered">
 							<img src="images/1.jpg" alt="" class="img-responsive">
@@ -116,10 +146,10 @@
 						<div class="description">
 							<h4 class="title">Album Info</h4>
 							<ul class="meta">
-								<li class="clearfix"><span>Artist:</span><span>Titan Slayer</span></li>
-								<li class="clearfix"><span>Release Date:</span><span>20 Jully, 2016</span></li>
-								<li class="clearfix"><span>Genre:</span><span>Trance, Vocal, Uplifiting</span></li>
-								<li class="clearfix"><span>Produced by:</span><span>Future Studios</span></li>
+								<li class="clearfix"><span>Artist:</span><span>Gorillaz</span></li>
+								<li class="clearfix"><span>Release Date:</span><span>9 March, 2010</span></li>
+								<li class="clearfix"><span>Genre:</span><span>rock, hip-hop alternatif, electropop, trip hop</span></li>
+								
 							</ul>
 							<div class="buy clearfix">
 								<h4 class="price">Price: $32.00</h4>
@@ -161,46 +191,24 @@
 						</div>
 						<div class="description">
 							<h4 class="title">Description</h4>
-							<p>Nullam id lacinia lectus. Sed ut ornare eros, sit amet accumsan arcu. Vestibulum sit amet felis vel tellus mattis aliquam. Vestibulum eget sagittis leo, ac gravida nisi. Duis suscipit dignissim ipsum in condimentum. Donec placerat quam turpis, non bibendum est tris tique ut. Sed dapibus urna sed augue dapibus, ac scelerisque mauris ultricies.</p>
-							<p>Maecenas tempus nec libero at semper. Nam vulputate erat leo, ut aliquam erat efficitur sed. Nam facilisis, augue et vulputate luct purus nisl pretium arcu, non aliquet ligula mauris ut ipsum. Sed lacinia urna auctor enim accumsan, sed dapibus lectus efficitunte ger id varius mi, feugiat ultricies metus. Nullam interdum lobortis</p>
+							<p>Le titre de l'album est confirmé le 27 novembre 2009 par le chanteur-compositeur et guitariste Damon Albarn au cours d'une interview avec The Guardian. Albarn a aussi révélé que les artistes Snoop Dogg, Lou Reed, Mos Def, Bobby Womack et De La Soul sont présents sur l'album. L'album est sorti en Europe le 8 mars 2010.</p>
 						</div>
 					</div>
 				</div>
 				<div class="row similar-albums">
 					<h3 class="col-sm-12 title">Similar Albums</h3>
 					<div class="col-sm-4">
-						<a href="#">
+						<a href="album2.php">
 							<div class="similar-album bordered hover-effect">
 								<div class="info-block">
-									<h4>Dance Floor</h4>
-									<h5>K Project</h5>
+									<h4>New Album</h4>
+									<h5>Plastic Winter</h5>
 								</div>
-								<img src="images/5.jpg" alt="" class="img-responsive">
+								<img src="images/albums/cov.jpg" alt="" class="img-responsive">
 							</div>
 						</a>
 					</div>
-					<div class="col-sm-4">
-						<a href="#">
-							<div class="similar-album bordered hover-effect">
-								<div class="info-block">
-									<h4>Dance Floor</h4>
-									<h5>K Project</h5>
-								</div>
-								<img src="images/5.jpg" alt="" class="img-responsive">
-							</div>
-						</a>
-					</div>
-					<div class="col-sm-4">
-						<a href="#">
-							<div class="similar-album bordered hover-effect">
-								<div class="info-block">
-									<h4>Dance Floor</h4>
-									<h5>K Project</h5>
-								</div>
-								<img src="images/5.jpg" alt="" class="img-responsive">
-							</div>
-						</a>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -322,45 +330,85 @@
 		}, [
 			// This playlist doesn't require poster image
 			{
-				artist: "Titan Slayer",
-				title:"Sisters of Furry",
-				mp3:"assets/mp3/Track-3.mp3",
+				artist: "Gorillaz",
+				title:"Orchestral Intro",
+				mp3:"audios/Track-3.mp3",
 				free: true
 			},
 			{	
-				artist: "Titan Slayer",
-				title:"Tempered Song",
-				mp3:"assets/mp3/Track-1.mp3"
+				artist: "Gorillaz, Snoop Dogg",
+				title:"Welcome to the World of the Plastic Beach ",
+				mp3:"audios/Track-1.mp3"
 			},
 			{
-				artist: "Titan Slayer First",
-				title:"Cyber Sonnet",
-				mp3:"assets/mp3/Track-2.mp3"
+				artist: "Gorillaz, Bashy, Kano",
+				title:"White Flag ",
+				mp3:"audios/Track-2.mp3"
 			},
 			{
-				artist: "Titan Slayer feat Rihanna",
-				title:"Free Song",
-				mp3:"assets/mp3/Track-4.mp3"
+				artist: "Gorillaz",
+				title:"Rhinestone Eyes",
+				mp3:"audios/Track-4.mp3"
 			},
 			{
-				artist: "Titan Slayer",
-				title:"Cro Magnon Man",
-				mp3:"assets/mp3/Track-5.mp3"
+				artist: "Gorillaz, Mos Def",
+				title:"Stylo",
+				mp3:"audios/Track-5.mp3"
 			},
 			{
-				artist: "Titan Slayer feat Adelle",
-				title:"Your Face",
-				mp3:"assets/mp3/Track-3.mp3",
+				artist: "Gorillaz, De La Soul, Gruff Rhys",
+				title:"Superfast Jellyfish ",
+				mp3:"audios/Track-3.mp3",
 			},
 			{
-				artist: "Titan Slayer",
-				title:"Lentement",
-				mp3:"assets/mp3/Track-1.mp3"
+				artist: "Gorillaz, Nagano",
+				title:"Empire Ants",
+				mp3:"audios/Track-1.mp3"
 			},
 			{
-				artist: "Titan Slayer",
-				title:"Cro Magnon Man",
-				mp3:"assets/mp3/Track-2.mp3"
+				artist: "Gorillaz, Smith",
+				title:"Glitter Freeze",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Reed",
+				title:"Some Kind of Nature",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"On Melancholy Hill",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Broken",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Mos Def",
+				title:"Sweepstakes",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Plastic Beach",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz, Nagano",
+				title:"To Binge",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Cloud of Unknowing",
+				mp3:"audios/Track-2.mp3"
+			},
+			{
+				artist: "Gorillaz",
+				title:"Pirate Jet",
+				mp3:"audios/Track-2.mp3"
 			}
 		],{
 			playlistOptions: {
