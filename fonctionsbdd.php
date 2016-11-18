@@ -25,7 +25,7 @@ function recupTexte($mysql, $langue) {
 }
 
 function recupArticles($mysql, $langue) {
-	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue.", lien, image FROM articles order by date_insert desc");
+	$req3 = $mysql->prepare("SELECT titre_".$langue.", ".$langue.", lien, image, date_insert FROM articles order by date_insert desc");
 	$req3->execute();
 	if($req3->rowCount()>=1){
 		$i=0;

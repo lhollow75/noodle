@@ -339,7 +339,7 @@ echo utf8_encode($affiche['fin_compte'][$langue]);
 		</div>
 	
 		<div id="questions" style="bottom: -1px;">
-			<a href="#msg">Des questions ? </a>
+			<a href="#msg"><?php echo $affiche['question'][$langue]; ?></a>
 		</div>
 			<!--
 		<div id="msg" class="open" >

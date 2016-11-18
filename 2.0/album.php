@@ -86,11 +86,11 @@
 					<li class="">
 						<a href="index.php#videos">Vidéos</a>
 					</li>
-					<li class="logo_gorillaz">
-						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
-					</li>
 					<li class="">
 						<a href="index.php#tour">Tour</a>
+					</li>
+					<li class="logo_gorillaz">
+						<a href="index.php"><img src="img/logo.png" alt="logo_gorillaz" height="70"></a>
 					</li>
 					<li class="">
 						<a href="index.php#blog">Blog</a>

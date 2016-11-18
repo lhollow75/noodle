@@ -31,8 +31,10 @@
 	}
 	if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
 		$langue='en';
-	} else {
+	} else if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fr'){
 		$langue='fr';
+	} else {
+		$langue='de';
 	}
 	$date=recupEvent($mysql);
 	$affiche=recupTexte($mysql, $langue);
@@ -48,32 +50,46 @@
 	
 	<!-- Header -->
 	<header id="site-header">
-		<form action="#" id="search-header" name="search-header">
-			<input type="search" name="search" placeholder="Type and Hit Enter..">
-			<button>Search</button>
-		</form>
 		<div class="container nav-wrapper">
 			<!-- Logo -->
 			<div class="site-branding">
 				<?php 
-					if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
-						$langue='en';
-						?>
-						<form action="" method="post">	
-							<input class="btn " type="hidden" name="l" value="fr" />
-							<input class="btn " type="submit" id="langue_fr" value="Francais">
-						</form>
-						<?php
-					} else {
-					$langue='fr';
+				if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'en') {
 					?>
-					<form action="" method="post">	
-						<input class="btn " type="hidden" name="l" value="en" />
+					<form action="index.php" method="post" id="language">	
+						<input type="hidden" name="l" value="fr" />
+						<input class="btn " type="submit" id="langue_fr" value="Francais">
+					</form>
+					<form action="" method="post" id="language">	
+						<input type="hidden" name="l" value="de" />
+						<input class="btn " type="submit" id="langue_de" value="Deutsch">
+					</form>
+					<?php
+				} else if (isset($_SESSION['lang']) && $_SESSION['lang'] == 'fr'){
+					?>
+					<form action="index.php" method="post" id="language">	
+						<input type="hidden" name="l" value="en" />
 						<input class="btn " type="submit" id="langue_en" value="English">
-					</form>	
-					<?php 
-					}
+					</form>
+					<form action="" method="post" id="language">	
+						<input type="hidden" name="l" value="de" />
+						<input class="btn " type="submit" id="langue_de" value="Deutsch">
+					</form>
+					
+				<?php 
+				} else {
 					?>
+					<form action="" method="post" id="language">	
+						<input type="hidden" name="l" value="fr" />
+						<input class="btn " type="submit" id="langue_fr" value="Francais">
+					</form>
+					<form action="" method="post" id="language">	
+						<input type="hidden" name="l" value="en" />
+						<input class="btn " type="submit" id="langue_en" value="English">
+					</form>
+					<?php
+				}
+				?>
 			</div>
 			<!-- Main Mneu -->
 			<nav id="site-navigation" class="site-navigation">
@@ -97,7 +113,7 @@
 						<a href="#store"><?php echo $affiche['boutique'][$langue]; ?></a>
 					</li>
 					<li class="">
-						<a href="#contact">Contact</a>
+						<a href="#contact"><?php echo $affiche['contact'][$langue]; ?></a>
 					</li>
 				</ul>
 			</nav>

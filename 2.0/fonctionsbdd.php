@@ -39,10 +39,14 @@ function recupArticles($mysql, $langue) {
 					$reponse[$i]['titre']=utf8_encode($donnees['titre_en']);
 					$reponse[$i]['article']=utf8_encode($donnees['en']);
 					break;
+				case 'de':
+					$reponse[$i]['titre']=utf8_encode($donnees['titre_de']);
+					$reponse[$i]['article']=utf8_encode($donnees['de']);
+					break;
 			}
+			$reponse[$i]['date_insert']=$donnees['date_insert'];
 			$reponse[$i]['lien']=$donnees['lien'];
 			$reponse[$i]['img']=$donnees['image'];
-			$reponse[$i]['date_insert']=$donnees['date_insert'];
 			$i++;
 		}
 	}
